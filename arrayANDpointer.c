@@ -160,3 +160,45 @@
 //     printf("%d %d",*ptr,*ptr1);
 //     return 0;
 // }
+
+
+
+// BENEFITS of using POINTERS
+// 1. used to access the address of variable
+// 2. more efficient in handling arrays in c nd structures in c
+// 3. reduces length of program nd its execution time as well
+// 4. allows C language to support dynamic memory management
+// 5. pointers are dynamic variables
+// 6. used for dynamic memory allocation
+// 7. enables us to access a variable that is defined outside the function
+// 8. more efficient in handling the data tables
+// 9. used in data structures in linked organization of data.
+
+
+// POINTER OPERATORS 
+// Two types of operator : 
+// 1. address operator (&) : used to find the address of any type of variable
+// Syntax : pointer = &variable-name (address of variable)
+
+// 2. dereference operator (*) : access the value of variable through its address / pointer.
+// Syntax : *pointervariable
+
+
+// POINTERS ARITHMETIC in C
+// 1. increment (++) : p = p + sizeof(datatype)
+#include <stdio.h>
+int main() {
+    int a = 20;
+    int *p;
+    p = &a;
+    printf("Pointer before increment: ");
+    printf("%p\n",p);
+    p++;
+    printf("Pointer after increment: ");
+    printf("%p\n",p);
+    return 0;
+}
+// 2. decrement (--) : 
+// 3. addition (+)
+// 4. subtraction (-)
+// 5. comparison (==)
