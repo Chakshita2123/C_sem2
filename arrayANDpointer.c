@@ -228,18 +228,62 @@
 
 // 3. addition (+) : new_address = current_address + (number * size_of(data type))
 // when a pointer is added with a value, the value is first multiplied by the size of data type and then added to the pointer
-#include <stdio.h>
-int main() {
-    int a = 50;
-    int b = 3;
-    int *p;
-    p = &b;
-    printf("Address of p variable is %u\n",p);
-    p = p+b;
-    printf("After adding 3: Address of p variable is %u\n",p);
-    return 0;
-}
+
+// #include <stdio.h>
+// int main() {
+//     int a = 50;
+//     int b = 3;
+//     int *p;
+//     p = &b;
+//     printf("Address of p variable is %u\n",p);
+//     p = p+b;
+//     printf("After adding 3: Address of p variable is %u\n",p);
+//     return 0;
+// }
+
+// int main() {
+//     int a = 50;
+//     float b = 3;
+//     float *p;
+//     p=&b;
+//     printf("Address of p variable is %u\n",p);
+//     p = p+a;
+//     printf("After adding 3: Address of p variable is %u\n",p);
+//     return 0;
+// }
+
+
+// Program to add two numbers using pointers
+// #include <stdio.h>
+// int main() {
+//     int num1, num2, sum;
+//     int *ptr1,*ptr2;
+//     ptr1=&num1;
+//     ptr2=&num2;
+
+//     printf("Enter any two numbers: ");
+//     scanf("%d %d",ptr1,ptr2);
+
+//     sum=*ptr1+*ptr2;
+//     printf("Sum=%d",sum);
+//     return 0;
+// }
+
 
 // 4. subtraction (-) :
+#include <stdio.h>
+int main() {
+    int num1, num2, difference;
+    int *ptr1,*ptr2;
+    ptr1=&num1;
+    ptr2=&num2;
+
+    printf("Enter any two numbers: ");
+    scanf("%d %d",ptr1,ptr2);
+
+    difference=*ptr1-*ptr2;
+    printf("Difference=%d",difference);
+    return 0;
+}
 
 // 5. comparison (==) :
