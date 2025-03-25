@@ -271,19 +271,43 @@
 
 
 // 4. subtraction (-) :
-#include <stdio.h>
-int main() {
-    int num1, num2, difference;
-    int *ptr1,*ptr2;
-    ptr1=&num1;
-    ptr2=&num2;
+// #include <stdio.h>
+// int main() {
+//     int num1, num2, difference;
+//     int *ptr1,*ptr2;
+//     ptr1=&num1;
+//     ptr2=&num2;
 
-    printf("Enter any two numbers: ");
-    scanf("%d %d",ptr1,ptr2);
+//     printf("Enter any two numbers: ");
+//     scanf("%d %d",ptr1,ptr2);
 
-    difference=*ptr1-*ptr2;
-    printf("Difference=%d",difference);
-    return 0;
-}
+//     difference=*ptr1-*ptr2;
+//     printf("Difference=%d",difference);
+//     return 0;
+// }
+
+// NOTE : pointer can not be multiplied or divided
+
 
 // 5. comparison (==) :
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int *ptr1, *ptr2;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    ptr1 = &a;
+    ptr2 = &b;
+    
+    if (*ptr1 > *ptr2) {
+        printf("The larger number is: %d\n", *ptr1);
+    } else if (*ptr1 < *ptr2) {
+        printf("The larger number is: %d\n", *ptr2);
+    } else {
+        printf("Both numbers are equal.\n");
+    }
+
+    return 0;
+}
