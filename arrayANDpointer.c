@@ -290,24 +290,55 @@
 
 
 // 5. comparison (==) :
+// #include <stdio.h>
+
+// int main() {
+//     int a, b;
+//     int *ptr1, *ptr2;
+
+//     printf("Enter two numbers: ");
+//     scanf("%d %d", &a, &b);
+//     ptr1 = &a;
+//     ptr2 = &b;
+
+//     if (*ptr1 > *ptr2) {
+//         printf("The larger number is: %d\n", *ptr1);
+//     } else if (*ptr1 < *ptr2) {
+//         printf("The larger number is: %d\n", *ptr2);
+//     } else {
+//         printf("Both numbers are equal.\n");
+//     }
+
+//     return 0;
+// }
+
+
+
+
+// MEMORY ALLOCATION FUNCTIONS:
+
+// Dynamic Memory Allocation 
+// 1. malloc - allocates memory
 #include <stdio.h>
-
+#include <stdlib.h>
 int main() {
-    int a, b;
-    int *ptr1, *ptr2;
-
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-    ptr1 = &a;
-    ptr2 = &b;
-    
-    if (*ptr1 > *ptr2) {
-        printf("The larger number is: %d\n", *ptr1);
-    } else if (*ptr1 < *ptr2) {
-        printf("The larger number is: %d\n", *ptr2);
-    } else {
-        printf("Both numbers are equal.\n");
+    int *arr;
+    int size = 5;
+    arr = (int *)malloc(size *sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
     }
-
+    for (int i = 0;i<size;i++) {
+        arr[i] = i + 1;
+    }
+    for (int i = 0;i<size;i++) {
+        printf("%d",arr[i]);
+    }
+    printf("\n");
+    free(arr);
     return 0;
 }
+// 2. calloc - allocates and initialize memory
+// 3. realloc - resizes allocated memory
+// 4. free - releases memory
