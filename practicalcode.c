@@ -478,32 +478,204 @@
 // }
 
 
-#include <stdio.h>  
-#include <math.h>  
+// #include <stdio.h>  
+// #include <math.h>  
+// int main() {
+//     int num, originalNum, remainder, result = 0, n = 0, temp;
+
+//     printf("Enter a number: ");
+//     scanf("%d", &num);
+
+//     originalNum = num;  
+//     temp = num;
+
+//     while (temp != 0) {
+//         temp /= 10;
+//         n++;
+//     }
+
+//     for (temp = num; temp != 0; temp /= 10) {
+//         remainder = temp % 10;                    
+//         result += pow(remainder, n);              
+//     }
+
+//     if (result == originalNum)
+//         printf("%d is an Armstrong number.\n", num);
+//     else
+//         printf("%d is not an Armstrong number.\n", num);
+
+//     return 0;  
+// }
+
+// Program 16
+// #include <stdio.h>
+// #include <math.h>
+
+// // Function to check if a number is prime
+// int is_prime(int n) {
+//     if (n < 2) return 0;
+//     for (int i = 2; i <= sqrt(n); i++) {
+//         if (n % i == 0) return 0;
+//     }
+//     return 1;
+// }
+
+// // Function to check if a number is an Armstrong number
+// int is_armstrong(int n) {
+//     int sum = 0, temp = n, digits = 0;
+//     while (temp > 0) {
+//         digits++;
+//         temp /= 10;
+//     }
+//     temp = n;
+//     while (temp > 0) {
+//         int digit = temp % 10;
+//         sum += pow(digit, digits);
+//         temp /= 10;
+//     }
+//     return (sum == n);
+// }
+
+// // Function to check if a number is a perfect number
+// int is_perfect(int n) {
+//     int sum = 0;
+//     for (int i = 1; i < n; i++) {
+//         if (n % i == 0) {
+//             sum += i;
+//         }
+//     }
+//     return (sum == n);
+// }
+
+// int main() {
+//     int num;
+//     printf("Enter a number: ");
+//     scanf("%d", &num);
+
+//     if (is_prime(num))
+//         printf("%d is a Prime number.\n", num);
+//     else
+//         printf("%d is not a Prime number.\n", num);
+
+//     if (is_armstrong(num))
+//         printf("%d is an Armstrong number.\n", num);
+//     else
+//         printf("%d is not an Armstrong number.\n", num);
+
+//     if (is_perfect(num))
+//         printf("%d is a Perfect number.\n", num);
+//     else
+//         printf("%d is not a Perfect number.\n", num);
+
+//     return 0;
+// }
+
+
+// Program 17
+// #include <stdio.h>
+// #define PI 3.14159
+
+// // Function to calculate the area of the circle
+// double calculateArea(double radius) {
+//     return PI * radius * radius;
+// }
+
+// // Function to calculate the circumference of the circle
+// double calculateCircumference(double radius) {
+//     return 2 * PI * radius;
+// }
+
+// int main() {
+//     double radius, area, circumference;
+    
+//     // Taking user input
+//     printf("Enter the radius of the circle: ");
+//     scanf("%lf", &radius);
+    
+//     // Function calls
+//     area = calculateArea(radius);
+//     circumference = calculateCircumference(radius);
+    
+//     // Displaying results
+//     printf("Area of the circle: %.2lf\n", area);
+//     printf("Circumference of the circle: %.2lf\n", circumference);
+    
+//     return 0;
+// }
+
+
+// Program 18
+// #include <stdio.h>
+
+// // Function to swap using Call by Value
+// void swapByValue(int a, int b) {
+//     int temp = a;
+//     a = b;
+//     b = temp;
+//     printf("Inside swapByValue: a = %d, b = %d\n", a, b);
+// }
+
+// // Function to swap using Call by Reference
+// void swapByReference(int *a, int *b) {
+//     int temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+
+// int main() {
+//     int x, y;
+
+//     // Taking input from user
+//     printf("Enter two numbers: ");
+//     scanf("%d %d", &x, &y);
+
+//     printf("\nBefore swapping: x = %d, y = %d\n", x, y);
+
+//     // Call by Value
+//     swapByValue(x, y);
+//     printf("After swapByValue: x = %d, y = %d (No change in main)\n", x, y);
+
+//     // Call by Reference
+//     swapByReference(&x, &y);
+//     printf("After swapByReference: x = %d, y = %d (Values swapped in main)\n", x, y);
+
+//     return 0;
+// }
+
+
+// Program 20
+#include <stdio.h>
+
+int sumArray(int arr[], int size) {
+    int sum = 0;
+
+    // Loop through the array and calculate sum
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+
+    return sum; // Return the sum of elements
+}
+
 int main() {
-    int num, originalNum, remainder, result = 0, n = 0, temp;
+    int arr[100], size;
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
+    // Taking input for array size
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
 
-    originalNum = num;  
-    temp = num;
-
-    while (temp != 0) {
-        temp /= 10;
-        n++;
+    // Taking input for array elements
+    printf("Enter %d elements: ", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
     }
 
-    for (temp = num; temp != 0; temp /= 10) {
-        remainder = temp % 10;                    
-        result += pow(remainder, n);              
-    }
+    // Function call to calculate sum
+    int result = sumArray(arr, size);
 
-    if (result == originalNum)
-        printf("%d is an Armstrong number.\n", num);
-    else
-        printf("%d is not an Armstrong number.\n", num);
+    // Displaying the sum of array elements
+    printf("Sum of array elements: %d\n", result);
 
-    return 0;  
+    return 0;
 }
 

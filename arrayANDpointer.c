@@ -146,7 +146,7 @@
 //     int *ptr 2 = &y;
 //     ptr1=ptr2;
 //     printf("%d %d",*ptr1,*ptr2);
-//     return 0l
+//     return 0;
 // }
 
 
@@ -186,19 +186,60 @@
 
 // POINTERS ARITHMETIC in C
 // 1. increment (++) : p = p + sizeof(datatype)
+// #include <stdio.h>
+// int main() {
+//     int a = 20;
+//     int *p;     // pointer to an integer
+//     p = &a;     // pointer stores the address of a
+//     printf("Pointer before increment: ");
+//     printf("%p\n",p);
+//     p++;        // incrementing pointer ptr 1
+//     printf("Pointer after increment: ");
+//     printf("%p\n",p);
+//     return 0;
+// }
+
+// eg : 
+// #include <stdio.h>
+// int main() {
+//     int x = 50;
+//     int *ptr1= &x;
+//     int *ptr2 = &x;
+//     int y = ++*ptr2;     // increment the value of x through ptr2 and assign it to y
+//     printf("%d %d",++*ptr1,y);
+//     return 0;
+// }
+
+
+
+// 2. decrement (--) : 
+// #include <stdio.h>
+// int main() {
+//     int a = 20;
+//     int *p;
+//     p = &a;
+//     printf("Pointer before decrement: ");
+//     printf("%p\n",p);
+//     p--;
+//     printf("POinter after decrement: ");
+//     printf("%p\n",p);
+//     return 0;
+// }
+
+// 3. addition (+) : new_address = current_address + (number * size_of(data type))
+// when a pointer is added with a value, the value is first multiplied by the size of data type and then added to the pointer
 #include <stdio.h>
 int main() {
-    int a = 20;
+    int a = 50;
+    int b = 3;
     int *p;
-    p = &a;
-    printf("Pointer before increment: ");
-    printf("%p\n",p);
-    p++;
-    printf("Pointer after increment: ");
-    printf("%p\n",p);
+    p = &b;
+    printf("Address of p variable is %u\n",p);
+    p = p+b;
+    printf("After adding 3: Address of p variable is %u\n",p);
     return 0;
 }
-// 2. decrement (--) : 
-// 3. addition (+)
-// 4. subtraction (-)
-// 5. comparison (==)
+
+// 4. subtraction (-) :
+
+// 5. comparison (==) :
