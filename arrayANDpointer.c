@@ -503,52 +503,44 @@
 
 // 3. realloc - resizes allocated memory
 // syntax : ptr =(data type *)relloc(ptr,new size);
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int main()
-{
-    char *text = NULL;
-    int size = 0;
-    int capacity = 0;  // Track allocated capacity
-    char ch;
-    
-    // Initial allocation
-    capacity = 10;  // Start with a reasonable size
-    text = (char *)malloc(capacity * sizeof(char));
-    if (text == NULL) {
+#define INITIAL_CAPACITY 10
+
+int main() {
+    char *text = (char *)malloc(INITIAL_CAPACITY * sizeof(char));
+    if (!text) {
         printf("Memory allocation failed\n");
         return 1;
     }
 
+    int size = 0, capacity = INITIAL_CAPACITY;
+    char ch;
 
-    {
-        // Check if we need to expand
-        if (size >= capacity - 1) {  // Leave room for null terminator
-            capacity *= 2;  // Double the capacity
+    printf("Enter text: ");
+    while ((ch = getchar()) != '\n' && ch != EOF) {
+        if (size >= capacity - 1) {
+            capacity *= 2; // Update capacity first
             char *temp = (char *)realloc(text, capacity * sizeof(char));
-            if (temp == NULL) {
+            if (!temp) {
                 printf("Memory allocation failed\n");
                 free(text);
                 return 1;
             }
             text = temp;
         }
-        
         text[size++] = ch;
     }
-    
-    text[size] = '\0';  // Proper null termination
-    
+    text[size] = '\0';
+
     printf("You entered: %s\n", text);
+    printf("String length: %lu\n", strlen(text)); 
+    
     free(text);
     return 0;
 }
-
-
-
 
 
 
