@@ -503,42 +503,55 @@
 
 // 3. realloc - resizes allocated memory
 // syntax : ptr =(data type *)relloc(ptr,new size);
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main(){
+//     char *text = NULL;
+//     int size = 0;
+//     char ch;
+//     printf("Enter text(press enter to finish);\n");;
+//     while((ch=getchar())!='\n'){
+//         size++;
+//         text = (char *)realloc(text,size*sizeof(char));
+//         text[size-1]=ch;
+//     }
+//     text[size]='\0';
+//     printf("You entered: %s\n",text);
+//     free(text);
+//     return 0;
+// }
+
+
+// Ques . Read 1D array , print sum & its elements
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-#define INITIAL_CAPACITY 10
 
 int main() {
-    char *text = (char *)malloc(INITIAL_CAPACITY * sizeof(char));
-    if (!text) {
+    int n, sum = 0;
+    
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    
+    int *arr = (int *)malloc(n * sizeof(int));
+    if (!arr) {
         printf("Memory allocation failed\n");
         return 1;
     }
-
-    int size = 0, capacity = INITIAL_CAPACITY;
-    char ch;
-
-    printf("Enter text: ");
-    while ((ch = getchar()) != '\n' && ch != EOF) {
-        if (size >= capacity - 1) {
-            capacity *= 2; // Update capacity first
-            char *temp = (char *)realloc(text, capacity * sizeof(char));
-            if (!temp) {
-                printf("Memory allocation failed\n");
-                free(text);
-                return 1;
-            }
-            text = temp;
-        }
-        text[size++] = ch;
-    }
-    text[size] = '\0';
-
-    printf("You entered: %s\n", text);
-    printf("String length: %lu\n", strlen(text)); 
     
-    free(text);
+    printf("Enter %d elements: ", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+    
+    printf("Elements: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\nSum: %d\n", sum);
+    
+    free(arr);
     return 0;
 }
 
