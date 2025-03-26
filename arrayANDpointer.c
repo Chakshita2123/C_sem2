@@ -317,8 +317,42 @@
 
 // MEMORY ALLOCATION FUNCTIONS:
 
-// Dynamic Memory Allocation 
+// MEMORY ALLOCATION : Static  &  Dynamic
+// Static - memory allocation when variable is declared (size define ho like arr[100])
+// Problem with static - size readjustment & memory wastage
+
+// Dynamic - when u dont know in advance
+// Pointers are used in this
+
+// DIFFERENCE B/W STATIC & DYNAMIC
+// 1. Timing :      static - compile time                              ||        dynamic - run time
+// 2. Size :        static - fixed                                     ||        dynamic - non fixed
+// 3. Storage :     static - stack                                     ||        dynamic - heap
+// 4. Advantage :   static - simple to manage & faster access          ||        dynamic - flexible
+// 5. Disadvantage: static - not flexible & memory wastage             ||        dynamic - memory leakage
+
+
+
+
+// DYNAMIC MEMORY ALLOCATION
+
+
+// DIFFERENCE BETWEEN MALLOC & CALLOC
+//             Malloc                                              ||                  Calloc
+// 1. allocate only 1 block                                        || 1. allocate multiple blocks
+// 2. does not initialize memory (contains garbage value)          || 2. initialization is 0
+// 3. takes 1 arguementb (total size in bytes)                     || 3. takes 2 arguments (number of blocks, size of each block)
+// 4. syntax : ptr = (int *)malloc(size);                          || 4. syntax : ptr = (int *)calloc(n,size);
+// 5. faster                                                       || 5. slightly slower
+
+
+
+
+
 // 1. malloc - allocates memory
+// syntax : syntax : ptr = (int *)malloc(size);   
+
+// code 1 :
 // #include <stdio.h>
 // #include <stdlib.h>
 // int main() {
@@ -340,9 +374,51 @@
 //     return 0;
 // }
 
+// code 2 :
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *int_ptr=(int *)malloc(sizeof(int));
+//     if (int_ptr==NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     *int_ptr=10;
+//     printf(" Integer Value  : %d\n",*int_ptr);
+//     printf(" Address of int_ptr : %p\n",int_ptr);
+//     // allocate memory for char
+//     char *char_ptr=(char*)malloc(sizeof(char));
+//     if (char_ptr==NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     *char_ptr='A';
+//     printf(" Character Value : %c\n",*char_ptr);
+//     printf(" Address of char_ptr : %p\n",char_ptr);
+//     // allocate memory for float
+
+//     float *float_ptr=(float*)malloc(sizeof(float));
+//     if (float_ptr==NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     *float_ptr=3.14;
+//     printf(" Float Value : %f\n",*float_ptr);
+//     printf(" Address of float_ptr : %p\n",float_ptr);
+//     // free allocated memory
+//     free(int_ptr);
+//     free(char_ptr);
+//     free(float_ptr);
+//     return 0;
+    
+// }
+
 
 
 // 2. calloc - allocates and initialize memory
+// ptr = (int *)calloc(n,size);
+
+
 // #include <stdio.h>
 // #include <stdlib.h>
 // int main() {
@@ -378,46 +454,96 @@
 //     return 0;
 // }
 
-// sorting by dynamically allocating the memory
+
+
+// Ques. sorting by dynamically allocating the memory
+// #include <stdio.h>
+// #include <stdlib.h>
+// void swap(int *a, int *b) {
+//     int temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+
+// void bubbleSort(int *arr, int n) {
+//     for (int i = 0; i < n - 1; i++) {
+//         for (int j = 0; j < n - i - 1; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 swap(&arr[j], &arr[j + 1]);
+//             }
+//         }
+//     }
+// }
+
+// int main() {
+//     int n;
+//     printf("Enter the number of elements: ");
+//     scanf("%d", &n);
+//     int *arr = (int *)malloc(n * sizeof(int));
+    
+//     if (arr == NULL) {
+//         printf("Memory allocation failed!\n");
+//         return 1;
+//     }
+//     printf("Enter %d elements: ", n);
+//     for (int i = 0; i < n; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+//     bubbleSort(arr, n);
+//     printf("Sorted array: ");
+//     for (int i = 0; i < n; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\n");
+//     free(arr);
+//     return 0;
+// }
+
+
+
+// 3. realloc - resizes allocated memory
+// syntax : ptr =(data type *)relloc(ptr,new size);
+
 #include <stdio.h>
 #include <stdlib.h>
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
+#include <string.h>
 
-void bubbleSort(int *arr, int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swap(&arr[j], &arr[j + 1]);
-            }
-        }
-    }
-}
-
-int main() {
-    int n;
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-    int *arr = (int *)malloc(n * sizeof(int));
+int main()
+{
+    char *text = NULL;
+    int size = 0;
+    int capacity = 0;  // Track allocated capacity
+    char ch;
     
-    if (arr == NULL) {
-        printf("Memory allocation failed!\n");
+    // Initial allocation
+    capacity = 10;  // Start with a reasonable size
+    text = (char *)malloc(capacity * sizeof(char));
+    if (text == NULL) {
+        printf("Memory allocation failed\n");
         return 1;
     }
-    printf("Enter %d elements: ", n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+
+
+    {
+        // Check if we need to expand
+        if (size >= capacity - 1) {  // Leave room for null terminator
+            capacity *= 2;  // Double the capacity
+            char *temp = (char *)realloc(text, capacity * sizeof(char));
+            if (temp == NULL) {
+                printf("Memory allocation failed\n");
+                free(text);
+                return 1;
+            }
+            text = temp;
+        }
+        
+        text[size++] = ch;
     }
-    bubbleSort(arr, n);
-    printf("Sorted array: ");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-    free(arr);
+    
+    text[size] = '\0';  // Proper null termination
+    
+    printf("You entered: %s\n", text);
+    free(text);
     return 0;
 }
 
@@ -425,5 +551,20 @@ int main() {
 
 
 
-// 3. realloc - resizes allocated memory
+
 // 4. free - releases memory
+// syntax : free(ptr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
