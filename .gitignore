@@ -1,1 +1,20 @@
-*.exe
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore node_modules and dependencies
+node_modules/
+vendor/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore compiled files
+*.o
+*.out
+*.class
+
+# Ignore environment and config files
+.env
+config.json

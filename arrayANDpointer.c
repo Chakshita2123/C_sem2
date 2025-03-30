@@ -524,36 +524,36 @@
 
 
 // Ques . Read 1D array , print sum & its elements
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
-int main() {
-    int n, sum = 0;
+// int main() {
+//     int n, sum = 0;
     
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
+//     printf("Enter the number of elements: ");
+//     scanf("%d", &n);
     
-    int *arr = (int *)malloc(n * sizeof(int));
-    if (!arr) {
-        printf("Memory allocation failed\n");
-        return 1;
-    }
+//     int *arr = (int *)malloc(n * sizeof(int));
+//     if (!arr) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
     
-    printf("Enter %d elements: ", n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-        sum += arr[i];
-    }
+//     printf("Enter %d elements: ", n);
+//     for (int i = 0; i < n; i++) {
+//         scanf("%d", &arr[i]);
+//         sum += arr[i];
+//     }
     
-    printf("Elements: ");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\nSum: %d\n", sum);
+//     printf("Elements: ");
+//     for (int i = 0; i < n; i++) {
+//         printf("%d ", arr[i]);
+//     }
+//     printf("\nSum: %d\n", sum);
     
-    free(arr);
-    return 0;
-}
+//     free(arr);
+//     return 0;
+// }
 
 
 
