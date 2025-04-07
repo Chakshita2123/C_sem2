@@ -1,4 +1,4 @@
-     //Arrays are used to store multiple values in single variable .
+//Arrays are used to store multiple values in single variable .
 //square brackets
 //array indexes start with 0
 
