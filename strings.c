@@ -1,17 +1,34 @@
 // 1 D arrays of character
 // is a sequence of characters terminated with a null character "\0".
 // double quotes
-// String literaliteral - refer to a single character from the literal as a character.
+// String literal - refer to a single character from the literal as a character.
 // each string is stored at a different location.
 // eg : char string[1]="hello"     char string[2]="hello"  (but string1 is not equal to string2 [they are stored at different locations.])
 // change parts of string variable
+
+
+
+// Various ways to declare a string in C
+// examples:
+// char str1[6] = "hello";
+// char str2[] = "hello";
+// char *str3 = "hello";
+// char str4[6] = {'h','e','l','l','o','\0'}; 
+// note each variable is considered a constant in that the space it is connected to cannot be changed
+
+// Changing string variable
+// cannot change directly but using pointers we can change the string variable
+
+// can change parts of a string variable
 // char str1[6]="hello";
 // str1[0]='y';
 // str1 is now "yello" //
 // str1[4]="\0";
 // str1 is now yell //
 
-// String Input
+// STRING INPUT
+// use %s field specification in scanf() to read a string from the user.
+// %s reads a string until it encounters a whitespace character (space, tab, newline) and stores it in the specified variable.
 // eg:
 // void main()
 // {
@@ -34,6 +51,17 @@
 //     printf("Total a's=%d\n",count);
 // }
 
+
+// DIFFERENCE BETWEEN ARRAY AND POINTERS
+// Array is a collection of elements of the same data type stored in contiguous memory locations.
+// A pointer is a variable that stores the address of another variable.
+// The array name is a constant pointer that points to the first element of the array.
+// The pointer can be reassigned to point to different memory locations, while the array name cannot be changed.
+
+
+
+
+
 // Character arithmetic in C
 // is used to implement arithmetic operations like addition and subtraction on characters in C 
 // used to manipulate the strings.
@@ -50,6 +78,22 @@
 //     printf("%c\n",(s-1));
 //     printf("%d\n",t);
 //     printf("%d\n",v);
+//     return 0;
+// }
+
+// counting characters in a string without using library functions 
+// #include <stdio.h>
+// int main() {
+//     char s[100];
+//     int i=0;
+//     printf("Enter a string: ");
+//     while (1) {
+//         s[i] = getchar();
+//         if (s[i] == '\n') break; // stop reading at newline
+//         i++;
+//     }
+//     s[i] = '\0'; // null-terminate the string
+//     printf("Length of the string is: %d\n", i);
 //     return 0;
 // }
 
@@ -187,7 +231,7 @@
 //         s2[]="how are you doing";
 //     printf("%d\n",strlen(s1));
 //     printf("%d\n",strlen(s2));
-//     printf("%d\n",strlen(s2+8));
+//     printf("%d\n",strlen(s2+7));
 //     printf("%d\n",strcmp(s1,s2));
 //     printf("%s\n",s1+1);
 //     strcpy(s1+1,s2+1);
@@ -216,13 +260,13 @@
 // }
 
 // using getchar() nd putchar()
-#include <stdio.h>
-#include <string.h>
-void main() 
-{
-    char sec;
-    printf("Enter ur section: \n");
-    sec=getchar();
-    printf("Your section is: \n");
-    putchar(sec);
-}
+// #include <stdio.h>
+// #include <string.h>
+// void main() 
+// {
+//     char sec;
+//     printf("Enter ur section: \n");
+//     sec=getchar();
+//     printf("Your section is: \n");
+//     putchar(sec);
+// }
