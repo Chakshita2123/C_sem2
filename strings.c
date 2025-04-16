@@ -3,7 +3,7 @@
 // double quotes
 // String literal - refer to a single character from the literal as a character.
 // each string is stored at a different location.
-// eg : char string[1]="hello"     char string[2]="hello"  (but string1 is not equal to string2 [they are stored at different locations.])
+// eg : char string1[]="hello"     char string2[]="hello"  (but string1 is not equal to string2 [they are stored at different locations.])
 // change parts of string variable
 
 
