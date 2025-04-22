@@ -95,50 +95,78 @@
 
 
 // FCFS Scheduling Algorithm
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main() {
-//     int n, bt[20], wt[20], tat[20], i;
-//     float avg_wt = 0, avg_tat = 0;
+struct Process {
+    int pid;
+    int at;  // Arrival Time
+    int bt;  // Burst Time
+    int ct;  // Completion Time
+    int tat; // Turnaround Time
+    int wt;  // Waiting Time
+};
 
-//     printf("Enter number of processes: ");
-//     scanf("%d", &n);
+void sortByArrival(struct Process p[], int n) {
+    struct Process temp;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (p[j].at > p[j + 1].at) {
+                temp = p[j];
+                p[j] = p[j + 1];
+                p[j + 1] = temp;
+            }
+        }
+    }
+}
 
-//     for(i = 0; i < n; i++) {
-//         printf("Enter Burst Time for P[%d]: ", i + 1);
-//         scanf("%d", &bt[i]);
-//     }
+int main() {
+    int n;
+    float totalTAT = 0, totalWT = 0;
+    
+    printf("Enter the number of processes: ");
+    scanf("%d", &n);
 
-//     wt[0] = 0;
-//     for(i = 1; i < n; i++) {
-//         wt[i] = wt[i - 1] + bt[i - 1];
-//     }
+    struct Process p[n];
 
-//     for(i = 0; i < n; i++) {
-//         tat[i] = bt[i] + wt[i];
-//         avg_wt += wt[i];
-//         avg_tat += tat[i];
-//     }
+    for (int i = 0; i < n; i++) {
+        p[i].pid = i + 1;
+        printf("Enter Arrival Time and Burst Time for Process P%d: ", p[i].pid);
+        scanf("%d %d", &p[i].at, &p[i].bt);
+    }
 
-//     // Gantt Chart
-//     printf("\nGantt Chart:\n|");
-//     for(i = 0; i < n; i++)
-//         printf(" P%d |", i + 1);
+    // Sort processes by arrival time
+    sortByArrival(p, n);
 
-//     printf("\n0");
-//     for(i = 0; i < n; i++)
-//         printf("   %d", wt[i] + bt[i]);
+    int time = 0;
+    for (int i = 0; i < n; i++) {
+        if (time < p[i].at) {
+            time = p[i].at;
+        }
+        time += p[i].bt;
+        p[i].ct = time;
+        p[i].tat = p[i].ct - p[i].at;
+        p[i].wt = p[i].tat - p[i].bt;
 
-//     // Result
-//     printf("\n\nProcess\tBT\tWT\tTAT\n");
-//     for(i = 0; i < n; i++)
-//         printf("P[%d]\t%d\t%d\t%d\n", i + 1, bt[i], wt[i], tat[i]);
+        totalTAT += p[i].tat;
+        totalWT += p[i].wt;
+    }
 
-//     printf("\nAverage Waiting Time: %.2f", avg_wt / n);
-//     printf("\nAverage Turnaround Time: %.2f\n", avg_tat / n);
+    printf("\nGantt Chart:\n| ");
+    for (int i = 0; i < n; i++) {
+        printf("P%d | ", p[i].pid);
+    }
 
-//     return 0;
-// }
+    printf("\n\nProcess\tAT\tBT\tCT\tTAT\tWT\n");
+    for (int i = 0; i < n; i++) {
+        printf("P%d\t%d\t%d\t%d\t%d\t%d\n",
+            p[i].pid, p[i].at, p[i].bt, p[i].ct, p[i].tat, p[i].wt);
+    }
+
+    printf("\nAverage Turnaround Time: %.2f", totalTAT / n);
+    printf("\nAverage Waiting Time: %.2f\n", totalWT / n);
+
+    return 0;
+}
 
 
 
@@ -439,102 +467,102 @@
 
 
 // Banker's Algorithm
-#include <stdio.h>
-#include <stdbool.h>
+// #include <stdio.h>
+// #include <stdbool.h>
 
-#define MAX_PROCESSES 10
-#define MAX_RESOURCES 10
+// #define MAX_PROCESSES 10
+// #define MAX_RESOURCES 10
 
-int main() {
-    int n, m; // n = number of processes, m = number of resources
-    int Allocation[MAX_PROCESSES][MAX_RESOURCES];
-    int Max[MAX_PROCESSES][MAX_RESOURCES];
-    int Available[MAX_RESOURCES];
-    int Need[MAX_PROCESSES][MAX_RESOURCES];
-    int Finish[MAX_PROCESSES] = {0};
-    int SafeSequence[MAX_PROCESSES];
-    int i, j, k;
+// int main() {
+//     int n, m; // n = number of processes, m = number of resources
+//     int Allocation[MAX_PROCESSES][MAX_RESOURCES];
+//     int Max[MAX_PROCESSES][MAX_RESOURCES];
+//     int Available[MAX_RESOURCES];
+//     int Need[MAX_PROCESSES][MAX_RESOURCES];
+//     int Finish[MAX_PROCESSES] = {0};
+//     int SafeSequence[MAX_PROCESSES];
+//     int i, j, k;
 
-    printf("Enter number of processes: ");
-    scanf("%d", &n);
+//     printf("Enter number of processes: ");
+//     scanf("%d", &n);
 
-    printf("Enter number of resources: ");
-    scanf("%d", &m);
+//     printf("Enter number of resources: ");
+//     scanf("%d", &m);
 
-    // Allocation matrix
-    printf("Enter Allocation matrix:\n");
-    for(i = 0; i < n; i++) {
-        printf("P[%d]: ", i);
-        for(j = 0; j < m; j++) {
-            scanf("%d", &Allocation[i][j]);
-        }
-    }
+//     // Allocation matrix
+//     printf("Enter Allocation matrix:\n");
+//     for(i = 0; i < n; i++) {
+//         printf("P[%d]: ", i);
+//         for(j = 0; j < m; j++) {
+//             scanf("%d", &Allocation[i][j]);
+//         }
+//     }
 
-    // Max matrix
-    printf("Enter Max matrix:\n");
-    for(i = 0; i < n; i++) {
-        printf("P[%d]: ", i);
-        for(j = 0; j < m; j++) {
-            scanf("%d", &Max[i][j]);
-        }
-    }
+//     // Max matrix
+//     printf("Enter Max matrix:\n");
+//     for(i = 0; i < n; i++) {
+//         printf("P[%d]: ", i);
+//         for(j = 0; j < m; j++) {
+//             scanf("%d", &Max[i][j]);
+//         }
+//     }
 
-    // Available resources
-    printf("Enter Available resources: ");
-    for(j = 0; j < m; j++) {
-        scanf("%d", &Available[j]);
-    }
+//     // Available resources
+//     printf("Enter Available resources: ");
+//     for(j = 0; j < m; j++) {
+//         scanf("%d", &Available[j]);
+//     }
 
-    // Calculate Need matrix
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < m; j++) {
-            Need[i][j] = Max[i][j] - Allocation[i][j];
-        }
-    }
+//     // Calculate Need matrix
+//     for(i = 0; i < n; i++) {
+//         for(j = 0; j < m; j++) {
+//             Need[i][j] = Max[i][j] - Allocation[i][j];
+//         }
+//     }
 
-    int count = 0;
-    while(count < n) {
-        bool found = false;
-        for(i = 0; i < n; i++) {
-            if(!Finish[i]) {
-                bool canAllocate = true;
-                for(j = 0; j < m; j++) {
-                    if(Need[i][j] > Available[j]) {
-                        canAllocate = false;
-                        break;
-                    }
-                }
-                if(canAllocate) {
-                    for(k = 0; k < m; k++) {
-                        Available[k] += Allocation[i][k];
-                    }
-                    SafeSequence[count++] = i;
-                    Finish[i] = 1;
-                    found = true;
-                }
-            }
-        }
-        if(!found) {
-            break; // Deadlock detected
-        }
-    }
+//     int count = 0;
+//     while(count < n) {
+//         bool found = false;
+//         for(i = 0; i < n; i++) {
+//             if(!Finish[i]) {
+//                 bool canAllocate = true;
+//                 for(j = 0; j < m; j++) {
+//                     if(Need[i][j] > Available[j]) {
+//                         canAllocate = false;
+//                         break;
+//                     }
+//                 }
+//                 if(canAllocate) {
+//                     for(k = 0; k < m; k++) {
+//                         Available[k] += Allocation[i][k];
+//                     }
+//                     SafeSequence[count++] = i;
+//                     Finish[i] = 1;
+//                     found = true;
+//                 }
+//             }
+//         }
+//         if(!found) {
+//             break; // Deadlock detected
+//         }
+//     }
 
-    if(count == n) {
-        printf("\nSystem is in a SAFE state.\nSafe Sequence: ");
-        for(i = 0; i < n; i++) {
-            printf("P[%d] ", SafeSequence[i]);
-        }
-        printf("\n");
-    } else {
-        printf("\nSystem is in a DEADLOCK state!\n");
-        printf("Processes not in safe sequence: ");
-        for(i = 0; i < n; i++) {
-            if(!Finish[i]) {
-                printf("P[%d] ", i);
-            }
-        }
-        printf("\n");
-    }
+//     if(count == n) {
+//         printf("\nSystem is in a SAFE state.\nSafe Sequence: ");
+//         for(i = 0; i < n; i++) {
+//             printf("P[%d] ", SafeSequence[i]);
+//         }
+//         printf("\n");
+//     } else {
+//         printf("\nSystem is in a DEADLOCK state!\n");
+//         printf("Processes not in safe sequence: ");
+//         for(i = 0; i < n; i++) {
+//             if(!Finish[i]) {
+//                 printf("P[%d] ", i);
+//             }
+//         }
+//         printf("\n");
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
