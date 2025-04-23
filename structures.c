@@ -52,20 +52,54 @@
 // }
 
 // copy the contents of one structure to another
-#include <stdio.h>
-#include <string.h>
-struct student {
-    int roll;
-    char name[50];
-    float marks;
-};
-struct student stud2;
-struct student stud1 = {1, "John Doe", 85.5};
+// #include <stdio.h>
+// #include <string.h>
+// struct student {
+//     int roll;
+//     char name[50];
+//     float marks;
+// };
+// struct student stud2;
+// struct student stud1 = {1, "John Doe", 85.5};
 
+// int main() {
+//     stud2 = stud1;
+//     printf("Roll: %d\n", stud2.roll);
+//     printf("Name: %s\n", stud2.name);
+//     printf("Marks: %.2f\n", stud2.marks);
+//     return 0;
+// }
+
+// define a structure vehicle in which u have to mention vehicle number , its model and per day rental. calculate the total rental cost for specific number of days and display the results
+#include <stdio.h>
+struct vehicle {
+    char vehicle_number[20];
+    char model[20];
+    float per_day_rental;
+};
 int main() {
-    stud2 = stud1;
-    printf("Roll: %d\n", stud2.roll);
-    printf("Name: %s\n", stud2.name);
-    printf("Marks: %.2f\n", stud2.marks);
+    struct vehicle v;
+    int days;
+    float total_cost;
+
+    printf("Enter vehicle number: ");
+    scanf("%s", v.vehicle_number);
+
+    printf("Enter model: ");
+    scanf("%s", v.model);
+
+    printf("Enter per day rental: ");
+    scanf("%f", &v.per_day_rental);
+
+    printf("Enter number of days: ");
+    scanf("%d", &days);
+
+    total_cost = v.per_day_rental * days;
+
+    printf("\nVehicle Number: %s\n", v.vehicle_number);
+    printf("Model: %s\n", v.model);
+    printf("Total Rental Cost for %d days: %.2f\n", days, total_cost);
+
     return 0;
 }
+
