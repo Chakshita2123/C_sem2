@@ -817,3 +817,74 @@
 
 //     return 0;
 // }
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 1000
+
+void findAndReplace(const char *filename, const char *search, const char *replace) {
+    FILE *fp = fopen(filename, "r");
+    if (!fp) {
+        printf("Unable to open file: %s\n", filename);
+        return;
+    }
+
+    char buffer[MAX];
+    char tempFile[] = "temp.txt";
+    FILE *temp = fopen(tempFile, "w");
+    if (!temp) {
+        printf("Unable to create temporary file.\n");
+        fclose(fp);
+        return;
+    }
+
+    int count = 0;
+
+    while (fgets(buffer, MAX, fp)) {
+        char *pos, tempBuffer[MAX];
+        int index = 0;
+        tempBuffer[0] = '\0';
+
+        char *start = buffer;
+
+        while ((pos = strstr(start, search)) != NULL) {
+            int len = pos - start;
+            strncat(tempBuffer, start, len);
+            strcat(tempBuffer, replace);
+            start = pos + strlen(search);
+            count++;
+        }
+        strcat(tempBuffer, start);
+        fputs(tempBuffer, temp);
+    }
+
+    fclose(fp);
+    fclose(temp);
+
+    // Replace original file with modified content
+    remove(filename);
+    rename(tempFile, filename);
+
+    printf("Total replacements made: %d\n", count);
+}
+
+int main() {
+    char filename[100], search[100], replace[100];
+
+    printf("Enter the filename: ");
+    scanf("%s", filename);
+
+    printf("Enter the string to find: ");
+    scanf("%s", search);
+
+    printf("Enter the string to replace with: ");
+    scanf("%s", replace);
+
+    findAndReplace(filename, search, replace);
+
+    return 0;
+}
