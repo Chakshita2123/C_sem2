@@ -14,39 +14,58 @@
 // }
 
 
-#include <stdio.h>
+// #include <stdio.h>
 
+// struct student {
+//     int roll;
+//     char name[50];
+//     float marks;
+// }; // ← Note the semicolon here
+
+// int main() {
+//     struct student stud[50];
+//     int n, i;
+
+//     printf("Enter the number of students: ");
+//     scanf("%d", &n);
+
+//     for (i = 0; i < n; i++) {
+//         printf("\nEnter roll number of student %d: ", i + 1);
+//         scanf("%d", &stud[i].roll);
+
+//         printf("Enter name of student %d: ", i + 1);
+//         scanf("%s", stud[i].name); // no & before stud[i].name
+
+//         printf("Enter marks of student %d: ", i + 1);
+//         scanf("%f", &stud[i].marks);
+//     }
+
+//     printf("\n--- Student Details ---\n");
+//     for (i = 0; i < n; i++) {
+//         printf("\nStudent %d:\n", i + 1);
+//         printf("Roll number: %d\n", stud[i].roll); // Fixed incorrect syntax stud[i.roll]
+//         printf("Name: %s\n", stud[i].name);
+//         printf("Marks: %.2f\n", stud[i].marks);
+//     }
+
+//     return 0;
+// }
+
+// copy the contents of one structure to another
+#include <stdio.h>
+#include <string.h>
 struct student {
     int roll;
     char name[50];
     float marks;
-}; // ← Note the semicolon here
+};
+struct student stud2;
+struct student stud1 = {1, "John Doe", 85.5};
 
 int main() {
-    struct student stud[50];
-    int n, i;
-
-    printf("Enter the number of students: ");
-    scanf("%d", &n);
-
-    for (i = 0; i < n; i++) {
-        printf("\nEnter roll number of student %d: ", i + 1);
-        scanf("%d", &stud[i].roll);
-
-        printf("Enter name of student %d: ", i + 1);
-        scanf("%s", stud[i].name); // no & before stud[i].name
-
-        printf("Enter marks of student %d: ", i + 1);
-        scanf("%f", &stud[i].marks);
-    }
-
-    printf("\n--- Student Details ---\n");
-    for (i = 0; i < n; i++) {
-        printf("\nStudent %d:\n", i + 1);
-        printf("Roll number: %d\n", stud[i].roll); // Fixed incorrect syntax stud[i.roll]
-        printf("Name: %s\n", stud[i].name);
-        printf("Marks: %.2f\n", stud[i].marks);
-    }
-
+    stud2 = stud1;
+    printf("Roll: %d\n", stud2.roll);
+    printf("Name: %s\n", stud2.name);
+    printf("Marks: %.2f\n", stud2.marks);
     return 0;
 }
