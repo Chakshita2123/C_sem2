@@ -87,7 +87,7 @@ int main() {
 
     printf("Enter model: ");
     scanf("%s", v.model);
-
+                                                                                           
     printf("Enter per day rental: ");
     scanf("%f", &v.per_day_rental);
 
@@ -98,6 +98,7 @@ int main() {
 
     printf("\nVehicle Number: %s\n", v.vehicle_number);
     printf("Model: %s\n", v.model);
+    printf("Per Day Rental: %.2f\n", v.per_day_rental);
     printf("Total Rental Cost for %d days: %.2f\n", days, total_cost);
 
     return 0;
