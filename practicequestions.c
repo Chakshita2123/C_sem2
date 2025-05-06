@@ -1,0 +1,415 @@
+// 1. with the help of an array enter the marks of n students and calculate and print he difference between marks of second topper and second loser.
+// #include <stdio.h>
+// #include <string.h> 
+// int main() {
+//     int n, i, j;
+//     float marks[50], temp;
+    
+//     printf("Enter the number of students: ");
+//     scanf("%d", &n);
+    
+//     for (i = 0; i < n; i++) {
+//         printf("Enter marks of student %d: ", i + 1);
+//         scanf("%f", &marks[i]);
+//     }
+//     for (i = 0; i < n - 1; i++) {
+//         for (j = i + 1; j < n; j++) {
+//             if (marks[i] > marks[j]) {
+//                 temp = marks[i];
+//                 marks[i] = marks[j];
+//                 marks[j] = temp;
+//             }
+//         }
+//     }
+    
+//     if (n >= 3) {
+//         float difference = marks[n - 2] - marks[1]; // Second topper - second loser
+//         printf("Difference between second topper and second loser: %.2f\n", difference);
+//     } else {
+//         printf("Not enough students to calculate the difference.\n");
+//     }
+    
+//     return 0;
+// }
+
+
+// 2. calculate the total fine as per the constraints :
+// without helmet - fine is 1000
+// without insurance - fine is 5000
+// without license - fine is 3000
+// calculate the total fine as per the constraints : input will be the total number of vehicles and further input will be corresponding to the constraints mentioned above. nd input should be 1 or 0 for each constraint.
+// #include <stdio.h>
+// int main() {
+//     int n, i;
+//     int helmet, insurance, license;
+//     float totalFine = 0.0;
+    
+//     printf("Enter the number of vehicles: ");
+//     scanf("%d", &n);
+    
+//     for (i = 0; i < n; i++) {
+//         printf("\nVehicle %d:\n", i + 1);
+        
+//         printf("Without helmet (1 for yes, 0 for no): ");
+//         scanf("%d", &helmet);
+        
+//         printf("Without insurance (1 for yes, 0 for no): ");
+//         scanf("%d", &insurance);
+        
+//         printf("Without license (1 for yes, 0 for no): ");
+//         scanf("%d", &license);
+        
+//         if (helmet == 1) {
+//             totalFine += 1000;
+//         }
+//         if (insurance == 1) {
+//             totalFine += 5000;
+//         }
+//         if (license == 1) {
+//             totalFine += 3000;
+//         }
+//     }
+    
+//     printf("Total fine: %.2f\n", totalFine);
+    
+//     return 0;
+// }
+
+
+// 3. enter n numbers with constraints that first number must lie in range 1 to 9 then calculate sum of numbers and find out the number is pallindrome or not if within the number there is 0 print invalid number
+// #include <stdio.h>
+// int main() {
+//     int n, i, sum = 0;
+//     char str[20];
+    
+//     printf("Enter a number (1-9): ");
+//     scanf("%s", str);
+    
+//     if (str[0] < '1' || str[0] > '9') {
+//         printf("Invalid number. First digit must be between 1 and 9.\n");
+//         return 1;
+//     }
+    
+//     for (i = 0; str[i] != '\0'; i++) {
+//         if (str[i] == '0') {
+//             printf("Invalid number. Contains zero.\n");
+//             return 1;
+//         }
+//         sum += str[i] - '0'; 
+//     }
+    
+//     printf("Sum of digits: %d\n", sum);
+    
+//     int len = i;
+//     int isPalindrome = 1;
+//     for (i = 0; i < len / 2; i++) {
+//         if (str[i] != str[len - i - 1]) {
+//             isPalindrome = 0;
+//             break;
+//         }
+//     }
+    
+//     if (isPalindrome) {
+//         printf("The number is a palindrome.\n");
+//     } else {
+//         printf("The number is not a palindrome.\n");
+//     }
+    
+//     return 0;
+// }
+
+
+// 4. u have to calculate the scholarship amount as per the criteria :
+// tier 1 - 20% of tution fee
+// tier 2 - 15% of tution fee
+// tier 3 - 10% of tution fee
+// if the student has greater than 10 extra curricular activities then scholarship amount will be increeased by 10%
+// if b/w 5 to 10 then scholarship amount will be increased by 5%
+// if less than 5 then no increase in scholarship amount
+// if total scholarship is greater than 50000 then deduct 20% as administrative fees.
+// if total scholarship is less than 50000 but greater than 25000 then deduct 15% as administrative fees
+// if total scholarship is less than 25000 then deduct 10% as administrative fees
+// output should be total scholarship amount before deduction and net scholarship amount after deduction
+// #include <stdio.h>
+// int main() {
+//     float tuitionFee, scholarshipAmount, netScholarship;
+//     int tier, extracurricularActivities;
+    
+//     printf("Enter the tuition fee: ");
+//     scanf("%f", &tuitionFee);
+    
+//     printf("Enter the scholarship tier (1, 2, or 3): ");
+//     scanf("%d", &tier);
+    
+//     printf("Enter the number of extracurricular activities: ");
+//     scanf("%d", &extracurricularActivities);
+
+//     switch (tier) {
+//         case 1:
+//             scholarshipAmount = 0.20 * tuitionFee;
+//             break;
+//         case 2:
+//             scholarshipAmount = 0.15 * tuitionFee;
+//             break;
+//         case 3:
+//             scholarshipAmount = 0.10 * tuitionFee;
+//             break;
+//         default:
+//             printf("Invalid tier.\n");
+//             return 1;
+//     }
+    
+//     if (extracurricularActivities > 10) {
+//         scholarshipAmount += 0.10 * scholarshipAmount;
+//     } else if (extracurricularActivities >= 5) {
+//         scholarshipAmount += 0.05 * scholarshipAmount; 
+//     }
+    
+//     float adminFeesPercentage;
+//     if (scholarshipAmount > 50000) {
+//         adminFeesPercentage = 0.20; 
+//     } else if (scholarshipAmount > 25000) {
+//         adminFeesPercentage = 0.15; 
+//     } else {
+//         adminFeesPercentage = 0.10; 
+//     }
+    
+//     float adminFees = adminFeesPercentage * scholarshipAmount;
+//     netScholarship = scholarshipAmount - adminFees;
+    
+//     printf("Total scholarship amount before deduction: %.2f\n", scholarshipAmount);
+//     printf("Net scholarship amount after deduction: %.2f\n", netScholarship);
+    
+//     return 0;
+// }
+
+
+// 5. an elevator system has to process the user request depending upon energy usage and safety measures . total floors are 20 if the requested floors are outside the range 1 - 20 then print invalid floor request. if the requested floor is the same as the current floor then print already here. otherwise move the elevator and calculate :
+// the movement direction (up or down ) nd the number of floor moved.
+// energy usage : 2 units per floor moved up 
+// if the movement is greater than 10 floors print cooling delay please wait.
+// input will be current floor and requested floor
+// output should be : invalid floor request, already here , movement direction, number of floors moved , energy usage
+// no energy usage while going down
+// #include <stdio.h>
+// int main() {
+//     int currentFloor, requestedFloor, floorsMoved;
+//     float energyUsage = 0.0;
+    
+//     printf("Enter the current floor (1-20): ");
+//     scanf("%d", &currentFloor);
+    
+//     printf("Enter the requested floor (1-20): ");
+//     scanf("%d", &requestedFloor);
+    
+//     if (currentFloor < 1 || currentFloor > 20 || requestedFloor < 1 || requestedFloor > 20) {
+//         printf("Invalid floor request.\n");
+//         return 1;
+//     }
+    
+//     if (currentFloor == requestedFloor) {
+//         printf("Already here.\n");
+//         return 0;
+//     }
+    
+//     if (requestedFloor > currentFloor) {
+//         floorsMoved = requestedFloor - currentFloor;
+//         energyUsage = 2 * floorsMoved; 
+//         printf("Movement direction: Up\n");
+//     } else {
+//         floorsMoved = currentFloor - requestedFloor;
+//         printf("Movement direction: Down\n");
+//     }
+    
+//     if (floorsMoved > 10) {
+//         printf("Cooling delay, please wait.\n");
+//     }
+//     printf("Number of floors moved: %d\n", floorsMoved);
+    
+//     if (energyUsage > 0) {
+//         printf("Energy usage: %.2f units\n", energyUsage);
+//     } else {
+//         printf("No energy usage while going down.\n");
+//     }
+    
+//     return 0;
+// }
+
+
+// 6. u have to simulate the lock pattern verfication system using loops . if the number is even and divisible by 4 it contributes to +3 points. if the number is odd and a prime number it contributes +5 points. if the number is negative then the system immediately stop processing further inputs. if the number is 0 then the system skip it without processing . you  have to determine whether the lock can be unoclocked or not. the lock opens only if the total score is atleast 30.
+// input will be sequence n and n space integers
+// output should be : 1. locked or unlocked and the the total score ; 2. access denied ; 3. threat detected
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <math.h>
+// int isPrime(int num) {
+//     if (num <= 1) return 0;
+//     for (int i = 2; i <= sqrt(num); i++) {
+//         if (num % i == 0) return 0;
+//     }
+//     return 1;
+// }
+// int main() {
+//     int n, i, score = 0;
+    
+//     printf("Enter the number of inputs: ");
+//     scanf("%d", &n);
+    
+//     int *numbers = (int *)malloc(n * sizeof(int));
+    
+//     printf("Enter the numbers: ");
+//     for (i = 0; i < n; i++) {
+//         scanf("%d", &numbers[i]);
+//     }
+    
+//     for (i = 0; i < n; i++) {
+//         if (numbers[i] < 0) {
+//             printf("Threat detected.\n");
+//             free(numbers);
+//             return 0;
+//         } else if (numbers[i] == 0) {
+//             continue;  
+//         } else if (numbers[i] % 2 == 0 && numbers[i] % 4 == 0) {
+//             score += 3;
+//         } else if (numbers[i] % 2 != 0 && isPrime(numbers[i])) {
+//             score += 5;
+//         }
+//     }
+    
+//     free(numbers);
+    
+//     if (score >= 30) {
+//         printf("Unlocked. Total score: %d\n", score);
+//     } else {
+//         printf("Locked. Total score: %d\n", score);
+//     }
+    
+//     return 0;
+// }
+
+
+
+// enter a string check if it is palindrome or not
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char str[100];
+//     int len, i, isPalindrome = 1;
+    
+//     printf("Enter a string: ");
+//     fgets(str, sizeof(str), stdin);
+    
+//     str[strcspn(str, "\n")] = '\0';
+    
+//     len = strlen(str);
+    
+//     for (i = 0; i < len / 2; i++) {
+//         if (str[i] != str[len - i - 1]) {
+//             isPalindrome = 0;
+//             break;
+//         }
+//     }
+    
+//     if (isPalindrome) {
+//         printf("The string is a palindrome.\n");
+//     } else {
+//         printf("The string is not a palindrome.\n");
+//     }
+//     return 0;
+// }
+
+
+// find whether two strings are equal or not without using library functions
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char str1[100], str2[100];
+//     int i, isEqual = 1;
+    
+//     printf("Enter first string: ");
+//     fgets(str1, sizeof(str1), stdin);
+    
+//     printf("Enter second string: ");
+//     fgets(str2, sizeof(str2), stdin);
+    
+//     str1[strcspn(str1, "\n")] = '\0';
+//     str2[strcspn(str2, "\n")] = '\0';
+    
+//     for (i = 0; str1[i] != '\0' || str2[i] != '\0'; i++) {
+//         if (str1[i] != str2[i]) {
+//             isEqual = 0;
+//             break;
+//         }
+//     }
+    
+//     if (isEqual) {
+//         printf("The strings are equal.\n");
+//     } else {
+//         printf("The strings are not equal.\n");
+//     }
+    
+//     return 0;
+// }
+
+
+
+
+// // count the alphabetic characters, digits and special characters in a string
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char str[100];
+//     int i, alphaCount = 0, digitCount = 0, specialCount = 0;
+    
+//     printf("Enter a string: ");
+//     fgets(str, sizeof(str), stdin);
+    
+//     str[strcspn(str, "\n")] = '\0';
+    
+//     for (i = 0; str[i] != '\0'; i++) {
+//         if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')) {
+//             alphaCount++;
+//         } else if (str[i] >= '0' && str[i] <= '9') {
+//             digitCount++;
+//         } else {
+//             specialCount++;
+//         }
+//     }
+    
+//     printf("Alphabetic characters: %d\n", alphaCount);
+//     printf("Digits: %d\n", digitCount);
+//     printf("Special characters: %d\n", specialCount);
+    
+//     return 0;
+// }
+
+
+// count how many vowels and consonants are there in a string
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char str[100];
+//     int i, vowelCount = 0, consonantCount = 0;
+    
+//     printf("Enter a string: ");
+//     fgets(str, sizeof(str), stdin);
+    
+//     str[strcspn(str, "\n")] = '\0';
+    
+//     for (i = 0; str[i] != '\0'; i++) {
+//         if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')) {
+//             if (str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U' ||
+//                 str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+//                 vowelCount++;
+//             } else {
+//                 consonantCount++;
+//             }
+//         }
+//     }
+    
+//     printf("Vowels: %d\n", vowelCount);
+//     printf("Consonants: %d\n", consonantCount);
+    
+//     return 0;
+// }
+

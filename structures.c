@@ -70,37 +70,33 @@
 //     return 0;
 // }
 
-// define a structure vehicle in which u have to mention vehicle number , its model and per day rental. calculate the total rental cost for specific number of days and display the results
-#include <stdio.h>
-struct vehicle {
-    char vehicle_number[20];
-    char model[20];
-    float per_day_rental;
-};
-int main() {
-    struct vehicle v;
-    int days;
-    float total_cost;
-
-    printf("Enter vehicle number: ");
-    scanf("%s", v.vehicle_number);
-
-    printf("Enter model: ");
-    scanf("%s", v.model);
-                                                                                           
-    printf("Enter per day rental: ");
-    scanf("%f", &v.per_day_rental);
-
-    printf("Enter number of days: ");
-    scanf("%d", &days);
-
-    total_cost = v.per_day_rental * days;
-
-    printf("\nVehicle Number: %s\n", v.vehicle_number);
-    printf("Model: %s\n", v.model);
-    printf("Per Day Rental: %.2f\n", v.per_day_rental);
-    printf("Total Rental Cost for %d days: %.2f\n", days, total_cost);
-
-    return 0;
-}
+// define a structure vehicle in which u have to mention vehicle number , its model (for car jeep and taxi / for all three) and per day rental. calculate the total rental cost separattely for specific number of days and display the results
+// #include <stdio.h>
+// struct vehicle {
+//     char vno[20];
+//     char model[20];
+//     float rental;
+// };
+// int main() {
+//     struct vehicle v;
+//     int days,n;
+//     float total_rental;
+//     printf("Enter number of vehicles: ");
+//     scanf("%d", &n);
+//     for(int i = 0; i < n; i++) {
+//         printf("Enter vehicle number: ");
+//         scanf("%s", v.vno);
+//         printf("Enter model: ");
+//         scanf("%s", v.model);
+//         printf("Enter per day rental: ");
+//         scanf("%f", &v.rental);
+//     }
+//     printf("Enter number of days: ");
+//     scanf("%d", &days);
+//     total_rental = v.rental * days;
+//     printf("Vehicle Number: %s\n", v.vno);
+//     printf("Model: %s\n", v.model);
+//     printf("Total Rental Cost for %d days: %.2f\n", days, total_rental);
+//     return 0;
+// }
 
