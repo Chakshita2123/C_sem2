@@ -415,19 +415,203 @@
 
 
 
-#include <stdio.h>
-int main() {
-    int i , a[10], n, pos=0,neg=0;
-    for (int i = 0;i<10;i++) {
-        scanf("%d",&a[i]);
+// #include <stdio.h>
+// int main() {
+//     int i , a[10], n, pos=0,neg=0;
+//     for (int i = 0;i<10;i++) {
+//         scanf("%d",&a[i]);
     
-    if (a[i]<0) {
-        neg++;
-    }
-    else {
-        pos++;
-    }
-    }
-    printf("%d\n%d",pos,neg);
-    return 0;
-}
+//     if (a[i]<0) {
+//         neg++;
+//     }
+//     else {
+//         pos++;
+//     }
+//     }
+//     printf("%d\n%d",pos,neg);
+//     return 0;
+// }
+
+
+
+
+// Write a C program to reverse an array using pointers. Implement a function that takes a pointer to the array and its size as 
+// arguments and reverses the array in place. 
+// #include <stdio.h>
+// void reverseArray(int *arr, int size) {
+//     int start = 0;
+//     int end = size - 1;
+//     while (start < end) {
+//         int temp = arr[start];
+//         arr[start] = arr[end];
+//         arr[end] = temp;
+//         start++;
+//         end--;
+//     }
+// }
+// int main() {
+//     int arr[100], size, i;
+    
+//     printf("Enter the size of the array: ");
+//     scanf("%d", &size);
+    
+//     printf("Enter %d elements:\n", size);
+//     for (i = 0; i < size; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+    
+//     reverseArray(arr, size);
+    
+//     printf("Reversed array:\n");
+//     for (i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+    
+//     return 0;
+// }
+
+
+// #include <stdio.h>
+// void reversedarray(int *arr, int size) {
+//     int start = 0;
+//     int end = size - 1;
+//     while (int start < end) {
+//         int temp = arr[start];
+//         arr[start] = arr[end];
+//         arr[end] = temp;
+//         start++;
+//         end--;
+//     }
+// }
+// int main() {
+//     int arr[100],size,i;
+//     scanf("%d",&size);
+//     for (i=0;i<size;i++) {
+//         scanf("%d",&arr[i]);
+//     }
+//     reversearray(arr,size);
+//     scanf("%d",&arr[i]);
+//     for (int i = 0;i<size;arr[i]){
+//         printf("%d",arr[i]);
+//     }
+//     return 0;
+// }
+
+
+
+// Design a C program that takes input from the user for a 5-element array and generates a password based on the addition of the 
+// differences between successive elements (result should be positive integer, if negative then convert it into positive integer) using 
+// pointer. The password is addition of cube of each digit of the result. The program should perform the following steps: 
+// 1. The user inputs 5 integers to populate the array. 
+// 2. Calculate the differences between successive elements of the array. 
+// 3. Calculate the sum of these differences. If calculated sum is negative then convert it into positive number. 
+// 4. Generate a password based on the sum obtained in step 3, which is addition of cube of each digit of the sum (in step 3).
+// #include <stdio.h>
+// #include <math.h>
+// int calculatePassword(int sum) {
+//     int password = 0;
+//     while (sum > 0) {
+//         int digit = sum % 10;
+//         password += pow(digit, 3); // Cube of the digit
+//         sum /= 10; // Remove the last digit
+//     }
+//     return password;
+// }  
+// int main() {
+//     int arr[5], i, sum = 0;
+    
+//     printf("Enter 5 integers:\n");
+//     for (i = 0; i < 5; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+    
+//     for (i = 1; i < 5; i++) {
+//         int diff = arr[i] - arr[i - 1];
+//         if (diff < 0) {
+//             diff = -diff; // Convert to positive if negative
+//         }
+//         sum += diff;
+//     }
+    
+//     int password = calculatePassword(sum);
+    
+//     printf("Password: %d\n", password);
+    
+//     return 0;
+// }
+
+
+// find the sum of digits using recursion
+// #include <stdio.h>
+// int sumOfDigits(int n) {
+//     if (n == 0) {
+//         return 0;
+//     } else {
+//         return (n % 10) + sumOfDigits(n / 10);
+//     }
+// }
+// int main() {
+//     int number;
+    
+//     printf("Enter a number: ");
+//     scanf("%d", &number);
+    
+//     int sum = sumOfDigits(number);
+    
+//     printf("Sum of digits: %d\n", sum);
+    
+//     return 0;
+// }
+
+// #include <stdio.h>
+// int sumofdigits(int n) {
+//     if (n==0) {
+//         return 0;
+//     }
+//     else {
+//         return (n%10) + sumofdigits(n/10);
+//     }
+// }
+// int main() {
+//     int number;
+//     printf("NUmber: ");
+//     scanf("%d",&number);
+//     int sum=sumofdigits(number);
+//     printf("Sum: %d\n",sum);
+//     return 0;
+// }
+
+
+
+// Create a countdown timer for a fitness workout that counts down from a user-defined number of seconds and displays each second 
+// in real-time. 
+// #include <stdio.h>
+// #include <unistd.h> // For sleep function
+// int main() {
+//     int seconds;
+    
+//     printf("Enter the countdown time in seconds: ");
+//     scanf("%d", &seconds);
+    
+//     for (int i = seconds; i >= 0; i--) {
+//         printf("%d\n", i);
+//         sleep(1); // Sleep for 1 second
+//     }
+    
+//     printf("Time's up!\n");
+    
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <unistd.h>
+// int main() {
+//     int seconds;
+//     scanf("%d",&seconds);
+//     for (int i = seconds; i>=0;i--) {
+//         printf("%d\n",i);
+//         sleep(1);
+//     }
+//     printf("Time's up!\n");
+//     return 0;
+// }
