@@ -615,3 +615,100 @@
 //     printf("Time's up!\n");
 //     return 0;
 // }
+
+
+// A cinema hall wants to display its seating chart. Each row has 5 seats. Write a program to take the number of rows as input and 
+// display the seats as row numbers followed by seat numbers. 
+// #include <stdio.h>
+// int main() {
+//     int rows, i, j;
+//     printf("ENter the number of rows:");
+//     scanf("%d",&rows);
+//     for (i=1;i<=rows;i++) {
+//         printf("Row %d:",i);
+//         for (j=1;j<=5;j++) {
+//             printf(" %d",j);
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+
+
+// A parking lot charges a fee based on the number of hours a car is parked. The first 3 hours are free, and each additional hour costs 
+// ₹50. Write a program using a do-while loop to calculate the fee for multiple cars until the user stops.
+// #include <stdio.h>
+// int main() {
+//     int car, hour, fee;
+//     char choice;
+//     do {
+//         scanf("%d",&car);
+//         scanf("%d",&hour);
+//         if (hour<=3) {
+//             fee=0;        
+//         }
+//         else {
+//             fee = (hour-3)*50;
+//         }
+//         printf("Fee for car %d is %d\n",car,fee);
+//         printf("Do you want to continue? (y/n): ");
+//         scanf(" %c", &choice); // Note the space before %c to consume any newline character
+//     }
+//     while (choice == 'y' || choice == 'Y');
+//     return 0;
+// }
+
+
+
+// check if the number is armstrong or not
+// #include <stdio.h>
+// #include <math.h>
+// int main() {
+//     int num, temp, sum = 0, n, i;   
+//     printf("Enter a number: ");
+//     scanf("%d",&num);
+//     n = num;
+//     temp = num;
+//     while (temp != 0) {
+//         temp /= 10;
+//         n++;
+//     }
+//     temp = num;
+//     while (temp != 0) {
+//         i = temp % 10;
+//         sum += pow(i, n);
+//         temp /= 10;
+//     }
+//     if (sum == num)
+//     printf("%d is an Armstrong number.\n", num);
+//     else
+//     printf("%d is not an Armstrong number.\n", num);
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <math.h>
+// int main() {
+//     int num,temp,n,i,sum=0;
+//     scanf("%d",&num);
+//     temp = num;
+//     n = num;
+//     while (temp !=0) {
+//         temp /=10;
+//         n++;
+//     }
+//     temp = num;
+//     while(temp !=10){
+//         i = temp % 10;
+//         sum += pow (i,n);
+//         temp /= 10;
+//     }
+//     if (sum == num) {
+//         printf("ArmstrongNumber\n",num);
+//     }
+//     else {
+//         printf("NotArmstrongNumber\n",num);
+//     }
+//     return 0;
+// }   
