@@ -801,3 +801,53 @@
 //     }
 //     return 0;
 // }
+
+
+// leap year or not
+// #include <stdio.h>
+// int main() {
+//     int year;
+//     printf("Enter year: ");
+//     scnaf("%d",&year);
+//     if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+//         printf("%d is a leap year.\n",year);
+//     }
+//     else {
+//         printf("%d is not a leap year.\n",year);
+//     }
+//     return 0;
+// }
+
+
+
+// Write a C program that evaluates a mathematical expression based on user input. The expression is defined as: 
+// result=a+b∗c/d−e 
+// Where a, b, c, d, and e are integers entered by the user. The program must do the following: 
+// 1. Evaluate the expression with the default operator precedence, which follows the standard mathematical rules (multiplication 
+// and division are performed before addition and subtraction). 
+// 2. Modify the expression to explicitly control the order of operations using parentheses. In this case, addition and subtraction 
+// should be performed first, followed by multiplication and division. 
+// 3. Display both results clearly to the user. 
+// INPUT FORMAT: 
+// Five integers, a, b, c, d, and e, entered by the user, where d is non-zero to avoid division by zero. 
+//  OUTPUT FORMAT: 
+// The program should display: 
+// 1. The result of the expression using the default operator precedence. 
+// 2. The result of the expression with explicitly controlled precedence using parentheses.
+// #include <stdio.h>
+// int main() {
+//     int a,b,c,d,e (d != 0);
+//     printf("Enter five integers: ");
+//     scanf("%d %d %d %d %d",&a,&b,&c,&d,&e);
+//     if (d == 0) {
+//         "division by 0 not allowed.\n"; 
+//         return 1;
+//     }
+//     else {
+//         int result1 = a + b * c / d - e;
+//         int result2 = (a + b) * (c / d) - e;
+//         printf("Result with default precedence: %d\n",result1);
+//         printf("Result with controlled precedence: %d\n",result2);
+//     }
+//     return 0;
+// }
