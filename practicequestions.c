@@ -712,3 +712,74 @@
 //     }
 //     return 0;
 // }   
+
+
+
+
+// Write a C program to determine the roots of a quadratic equation of the form ax2+bx+c=0ax^2 + bx + c = 0ax2+bx+c=0. The 
+// program should: 
+ 
+ 
+// 1. Accept the coefficients a, b, and c as input. 
+// 2. Check if the discriminant (D=b2−4acD = b^2 - 4acD=b2−4ac) is: 
+// o Positive (real and distinct roots), 
+// o Zero (real and equal roots), or 
+// o Negative (complex roots). 
+// 3. Print the appropriate message along with the roots.
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int a, b, c;
+    float D, root1, root2, realPart, imaginaryPart;
+    printf("Enter coefficients a, b and c: ");
+    scanf("%d %d %d", &a, &b, &c);
+    D = b * b - 4 * a * c;
+    if (D > 0) {
+        root1 = (-b + sqrt(D)) / (2 * a);
+        root2 = (-b - sqrt(D)) / (2 * a);
+        printf("Roots are real and distinct.\n");
+        printf("Root 1 = %.2f\n", root1);
+        printf("Root 2 = %.2f\n", root2);
+    } else if (D == 0) {
+        root1 = root2 = -b / (2 * a);
+        printf("Roots are real and equal.\n");
+        printf("Root 1 = Root 2 = %.2f\n", root1);
+    } else {
+        realPart = -b / (2 * a);
+        imaginaryPart = sqrt(-D) / (2 * a);
+        printf("Roots are complex.\n");
+        printf("Root 1 = %.2f + %.2fi\n", realPart, imaginaryPart);
+        printf("Root 2 = %.2f - %.2fi\n", realPart, imaginaryPart);
+    }
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int a,b,c;
+    float D , x1, x2, realPart, imaginaryPart;
+    printf("Enter coefficients of a,b,c: ");
+    scanf("%d %d %d\n",&a,&b,&c);
+    D = (b*b) - (4*a*c);
+    if (D>0) {
+        x1 = -b + sqrt(D) / (2*a);
+        x2 = -b - sqrt(D) / (2*a);
+        printf("Roots are real and distinct.");
+        printf("x1: %.2f\n",x1);
+        printf("x2: %.2f\n",x2);
+    }
+    else if (D==0) {
+        x1 == x2 == -b / (2*a);
+        printf("Both roots are equal.");
+        printf("x1 = x2 : %.2f\n",x1);
+    }
+    else {
+        realPart = -b / (2*a);
+        imaginaryPart = sqrt(-D) / (2*a);
+        printf("The roots are complex.");
+        printf("Root 1 = %.2f + %.2fi\n", realPart, imaginaryPart);
+        printf("Root 2 = %.2f - %.2fi\n", realPart, imaginaryPart);
+    return 0;
+}
