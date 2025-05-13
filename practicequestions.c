@@ -891,3 +891,17 @@
 //     printf("Factorial of %d is : %d\n",n,fact(n));
 //     return 0;
 // }
+
+// convert celsius to fahrenheit
+// #include <stdio.h>
+// float celsiustoFahrenheit(float celsius) {
+//     float fahrenheit = (celsius * 9/5) + 32;
+//     return fahrenheit;
+// }
+// int main() {
+//     float celsius;
+//     printf("Enter the temperature in celsius: ");
+//     scanf("%d",&celsius);
+//     printf("Temperature in fahrenheit is: %f\n",celsiustoFahrenheit(c));
+//     return 0;
+// }
