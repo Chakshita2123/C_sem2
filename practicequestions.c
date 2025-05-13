@@ -1102,3 +1102,22 @@
 //     *b = t;
 //     printf("a = %d & b = %d",*a,*b);
 // }
+
+
+// Write a function to calculate the sum , product & average of 2 numbers. Print that average in main function
+#include <stdio.h>
+void sum_product_average(int a, int b, int* sum, int* product, int* average);
+int main() {
+    int a = 3, b = 5;
+    int sum, product, average;
+    sum_product_average(a,b,&sum,&product,&average);
+    printf("Sum = %d\n",sum);
+    printf("Product = %d\n",product);
+    printf("Average = %f\n",average);
+    return 0;
+}
+void sum_product_average(int a, int b, int* sum, int* product, int* average) {
+    *sum = a+b;
+    *product = a*b;
+    *average = (*sum)/2;
+}
