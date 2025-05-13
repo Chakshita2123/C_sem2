@@ -968,3 +968,45 @@
 //     printf("%d", _age);
 //     return 0;
 // }
+
+
+// DECLARING POINTERS
+// int *ptr
+// char *ptr
+// float *ptr
+
+
+// FORMAT SPECIFIER
+// printf("%p",&age)     // &age = address         || %p = memory address of pointer
+// print("%p",ptr)      // ptr = address
+// printf("%p",&ptr)   // &ptr = address of pointer
+
+
+// VALUE AT ADDRESS 
+// format specifier
+// prinft("%d",age)
+// printf("%d",*ptr)     // *ptr = value at address
+// printf("%d",*(&age))  // &age = address         || *(&age) = value at address
+
+
+
+// Practice question
+// #include <stdio.h>
+// int main() {
+//     int *ptr;
+//     int x;
+
+//     ptr = &x;
+//     *ptr = 0; // *ptr = x = 0
+
+//     printf("x = %d\n",x);
+//     printf("*ptr = %d\n",*ptr);
+
+//     *ptr += 5;
+//     printf("x = %d\n",x);
+//     printf("*ptr = %d\n",*ptr);
+
+//     (*ptr)++;
+//     printf("x = %d\n",x);
+//     printf("*ptr = %d\n",*ptr);
+// }
