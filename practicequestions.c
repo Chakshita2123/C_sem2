@@ -1105,19 +1105,63 @@
 
 
 // Write a function to calculate the sum , product & average of 2 numbers. Print that average in main function
-#include <stdio.h>
-void sum_product_average(int a, int b, int* sum, int* product, int* average);
-int main() {
-    int a = 3, b = 5;
-    int sum, product, average;
-    sum_product_average(a,b,&sum,&product,&average);
-    printf("Sum = %d\n",sum);
-    printf("Product = %d\n",product);
-    printf("Average = %f\n",average);
-    return 0;
-}
-void sum_product_average(int a, int b, int* sum, int* product, int* average) {
-    *sum = a+b;
-    *product = a*b;
-    *average = (*sum)/2;
-}
+// #include <stdio.h>
+// void sum_product_average(int a, int b, int* sum, int* product, int* average);
+// int main() {
+//     int a = 3, b = 5;
+//     int sum, product, average;
+//     sum_product_average(a,b,&sum,&product,&average);
+//     printf("Sum = %d\n",sum);
+//     printf("Product = %d\n",product);
+//     printf("Average = %f\n",average);
+//     return 0;
+// }
+// void sum_product_average(int a, int b, int* sum, int* product, int* average) {
+//     *sum = a+b;
+//     *product = a*b;
+//     *average = (*sum)/2;
+// }
+
+
+
+// Ques. write a c program to find the maximum number b/w two numbers using pointer
+// #include <stdio.h>
+// void max(int* a,int* b) {
+//     if (*a > *b) {
+//         printf("%d is greater\n",*a);
+//     }
+//     else {
+//         printf("%d is greater\n",*b);
+//     }
+// }
+
+
+// Ques. print all the letters in english alphabet using pointer
+// #include <stdio.h>
+// void print_alphabet(char* alphabet) {
+//     while (*alphabet != '\0') {
+//         printf("%c ",*alphabet);
+//         alphabet++;
+//         }
+// }
+// int main() {
+//     char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+//     print_alphabet(alphabet);
+//     return 0;
+// }
+
+
+// Ques. print elements of array in reverse order
+// #include <stdio.h>
+// void print_reverse(int* arr, int size) {
+//     int i;
+//     for (i = size - 1; i >=0; i--) {
+//         printf("%d ",*arr);
+//         arr++;
+//         }
+// }
+// int main() {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     print_reverse(arr, 5);
+//     return 0;
+// }
