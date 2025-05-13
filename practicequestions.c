@@ -905,3 +905,25 @@
 //     printf("Temperature in fahrenheit is: %f\n",celsiustoFahrenheit(c));
 //     return 0;
 // }
+
+
+// percentage of marks of maths, science nd english 
+// #include <stdio.h>
+// int calculatePercentage(int maths, int science, int english) {
+//     int total = maths + science + english;
+//     int percentage = (total/3);
+//     return percentage;
+// }
+// int main() {
+//     int calculatePercentage(int maths, int science, int english) {
+//         int maths, science, english;
+//         printf("Enter marks of maths: ");
+//         scanf("%d",&maths);
+//         printf("Enter marks of science: ");
+//         scanf("%d",&science);
+//         printf("Enter marks of english: ");
+//         scanf("%d",&english);
+//         int percentage = calculatePercentage(maths, science, english);
+//     }
+//     return 0;
+// }
