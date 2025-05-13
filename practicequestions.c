@@ -952,3 +952,19 @@
 //     printf("Fibonacci series up to %d terms is: ",n);
 //     return fibonacciseries(n);
 // }
+
+
+
+// POINTERS
+// syntax : int *ptr = &x            // * = value of address    ||    & = address of value
+// int _x = *ptr       // check kro pointer mai kya memory address hai .... then us memory address mai dekho kya value haii .. jo value usme hogi .. vo value new memory address mai jakr store ho jyegiii.
+
+// #include <stdio.h>
+// int main() {
+//     int age = 22;
+//     int *ptr = &age;
+//     int _age = *ptr;
+
+//     printf("%d", _age);
+//     return 0;
+// }
