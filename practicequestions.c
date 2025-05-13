@@ -1069,3 +1069,36 @@
 //     printf("Square = %d\n",*n);
 // }
 
+
+// Ques . Swap 2 numbers a & b
+// swap ke liye hmesha ek 3rd variable ko introduce kro ... 3rd variable is temporary variable .... temp / t
+// call by value se swapping nhi hogi .... swapping hogi call by reference se
+// #include <stdio.h>
+// void swap (int a, int b);
+// void _swap(int* a, int* b);
+
+// int main() {
+//     int x = 3, y = 5;
+//     swap(x,y);
+
+//     int x = 3, y = 5;
+//     _swap(&x,&y);
+//     return 0;
+// }
+
+
+// // call by value
+// void swap (int a, int b) {
+//     int t = a;
+//     a = b;
+//     b = t;
+//     printf("a = %d & b = %d",a,b);
+// }
+
+// // call by reference 
+// void _swap (int* a, int* b) {
+//     int t = *a;
+//     *a = *b;
+//     *b = t;
+//     printf("a = %d & b = %d",*a,*b);
+// }
