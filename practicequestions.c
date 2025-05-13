@@ -856,18 +856,38 @@
 
 
 // sum of n natural numbers using recursion
-#include <stdio.h>
-int sum(int n) {
-    if (n == 0) {
-        return 0;
-    }
-    else {
-        return n + sum(n-1);
-    }
-}
-int main() {
-    int n;
-    printf("Enter a number: ");
-    scanf("%d",&n);
-    printf("Sum of first %d natural numbers is: %d\n",n,sum(n));
-}
+// #include <stdio.h>
+// int sum(int n) {
+//     if (n == 0) {
+//         return 0;
+//     }
+//     else {
+//         return n + sum(n-1);
+//     }
+// }
+// int main() {
+//     int n;
+//     printf("Enter a number: ");
+//     scanf("%d",&n);
+//     printf("Sum of first %d natural numbers is: %d\n",n,sum(n));
+//     return 0;
+// }
+
+
+// factorial of n
+// #include <stdio.h>
+// int factorial(int n) {
+//     if (n == 0) {
+//         return 1;   
+//     }
+//     else {
+//         return fact(n-1)*n;
+//     }
+// }
+// int main() {
+//     int n;
+//     printf("Enter a number: ");
+//     scanf("%d",&n);
+//     printf("Factorial of %d is : %d\n",n,fact(n));
+//     return 0;
+// }
