@@ -1165,3 +1165,18 @@
 //     print_reverse(arr, 5);
 //     return 0;
 // }
+
+
+
+
+
+
+
+
+
+
+// ARRAYS
+// collection of similar data types stored at contiguous memory location
+// Syntax : int marks[5]
+// char name[10]
+// float price[2]
