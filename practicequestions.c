@@ -1180,3 +1180,54 @@
 // Syntax : int marks[5]
 // char name[10]
 // float price[2]
+
+
+
+// Pointer Arithmetic
+// 1. incrementing a pointer
+// int age = 22;
+// int *ptr = &age;
+// ptr++; // Incrementing the pointer to point to the next integer location
+
+
+// 2. decrementing a pointer
+// int age = 22;
+// int *ptr = &age;
+// ptr--; // Decrementing the pointer to point to the previous integer location
+
+
+// 3. subtracting two pointers
+// int age1 = 22;
+// int age2 = 25;
+// int *ptr1 = &age1;
+// int *ptr2 = &age2;
+// int diff = ptr2 - ptr1; // Difference in the number of elements between the two pointers
+// printf("Difference: %d\n", diff); // Prints the difference in number of elements
+
+
+// 4. comparing two pointers
+// int age1 = 22;
+// int age2 = 25;
+// int *ptr1 = &age1;
+// int *ptr2 = &age2;
+// if (ptr1 > ptr2) {
+//     printf("ptr1 points to a higher memory address than ptr2\n");
+// } else if (ptr1 < ptr2) {
+//     printf("ptr1 points to a lower memory address than ptr2\n");
+// } else {
+//     printf("ptr1 and ptr2 point to the same memory address\n");
+// }
+// }
+
+
+
+
+
+
+// Array is a Pointer
+// int *ptr = &arr[0]; // Pointer to the first element of the array
+// int *ptr = arr; // Pointer to the first element of the array
+
+
+
+// 
