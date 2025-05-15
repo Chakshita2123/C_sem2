@@ -1230,4 +1230,28 @@
 
 
 
-// 
+// Arrays as Function Arguments
+
+// 1. Function Declaration
+
+// void printnumbers(int arr[],int n);
+//              OR
+// void printnumbers(int *arr,int n);
+
+
+// 2. Function Call
+// printnumbers(arr,n);
+
+
+// #include <stdio.h>
+// void printNumbers(int arr[],int n) {
+//     for (int i = 0;i<n;i++) {
+//         printf("%d ",arr[i]);
+//     }
+//     printf("\n");
+// }
+// int main() {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     printNumbers(arr,6);
+//     return 0;
+// }
