@@ -1360,3 +1360,37 @@
 //     }
 //     return 0;
 // }
+
+
+
+
+
+
+
+// STRINGS 
+// a character array terminated by null character (\0)
+// null character denotes the end of string
+// Syntax: char name[] = {'R','a','j','\0'};
+
+// Ques. Create a string firstName & lastName to store the details of user & print all the characters using a loop
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char firstName[20];
+//     char lastName[20];
+    
+//     printf("Enter first name: ");
+//     fgets(firstName, sizeof(firstName), stdin);
+    
+//     printf("Enter last name: ");
+//     fgets(lastName, sizeof(lastName), stdin);
+    
+//     // Remove newline character from the strings
+//     firstName[strcspn(firstName, "\n")] = '\0';
+//     lastName[strcspn(lastName, "\n")] = '\0';
+    
+//     printf("First Name: %s\n", firstName);
+//     printf("Last Name: %s\n", lastName);
+    
+//     return 0;
+// }
