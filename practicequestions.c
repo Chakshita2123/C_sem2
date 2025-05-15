@@ -1394,3 +1394,163 @@
     
 //     return 0;
 // }
+
+
+
+// String using Pointers
+// char *str = "hello world";   // can be reinitialized
+// store string in memory & the assigned address is stored in the char points 'str'
+// char str[] = "hello world";  // cannot be reinitialized
+
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char *canChange = "hello world";
+//     puts(canChange);
+//     canChange = "hello";
+//     puts(canChange);
+//     return 0;
+// }
+
+
+// array ko modify nahi kar sakte
+
+
+// Ques. make a program that input user's name &print its length
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char name[20];
+//     printf("Enter ur name: ");
+//     fgets(name, sizeof(name), stdin);
+//     int length = strlen(name);
+//     printf("Length of name: %d\n", length);
+//     return 0;
+// }
+
+
+// Library functions for string handling
+// use <string.h>
+
+// string handling functions:
+// 1. strlen - finds the length of a string
+// 2. strcat - concatenates one string at the end of another
+// 3. strcmp - compares two stringd lexicographically
+// 4. strcpy - copies one string from another
+
+// 1. strlen() -  finding and printing length of string s
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s[] = "hello";
+//     printf("%lu",strlen(s));
+//     return 0;
+// }
+
+// 2. strcpy() function copies a string from the source to the destinantion. It copies the entire string, including the null terminator.
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+//     char src[]="Hello World";
+//     char dest[20];
+//     strcpy(dest,src);
+//     printf("%s",dest);
+//     return 0;
+// }
+
+// 3. strncpy - copy till a particular position
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+//     char src[]="Welcome, Hello World";
+//     char dest[20];
+//     strncpy(dest,src,4);
+//     printf("%s",dest);
+//     return 0;
+// }
+
+// 4. strcat() - used to concatenate (append) one string to the end of another.
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s1[30]="Welcome, ";
+//     char s2[]="Chitkara University";
+//     strcat(s1,s2);
+//     printf("%s",s1);
+//     return 0;
+// }
+
+// 5. strncat() - concatenate till a particular position
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s1[30]="Welcome, ";
+//     char s2[]="How are you";
+//     strncat(s1,s2,4);
+//     printf("%s",s1);
+//     return 0;
+// }
+
+// 6. strcmp() - take two strings as arguments , compares two strings and returns an integer value as a result of comparison.
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s1[]="Mangoes";
+//     char s2[]="mango";
+//     int res = strcmp(s1,s2);
+//     if (res==0) printf("s1 and s2 are same");
+//     else if (res<0) printf("s1 is smaller than s2");
+//     else printf("s1 is greater than s2");
+//     return 0;
+// }
+
+// 7. strchr() - used to locate the first occurence of a character in a string
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s[] ="Hello world";
+//     char *res = strchr(s,'l');
+//     if (res!=NULL)
+//     printf("Character found at: %ld index", res-s);
+//     else printf("Character not found\n");
+//     return 0;
+// }
+
+// 8. strrchr() - used to find the last occurence of a character in a string
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s[] ="Hello world";
+//     char *res = strrchr(s,'l');
+//     if (res!=NULL)
+//     printf("Character found at: %ld index", res-s);
+//     else printf("Character not found\n");
+//     return 0;
+// }
+
+// 9. strstr() - used to search the first occurence of substring in another string
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+//     char s[] ="hello, world, world";
+//     char *pos = strstr(s,"world");
+//     if (pos!=NULL) printf("Found");
+//     else printf("Not Found");
+//     return 0;
+// }
+
+// 10. strtok() - used to split a string into tokens 
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s[] = "Hello, How are you!";
+//     char *t = strtok(s, ", ");
+//     while (t!=NULL) {
+//         printf("%s\n",t);
+//         t = strtok(NULL, ", ");
+//     }
+//     return 0;
+// }
