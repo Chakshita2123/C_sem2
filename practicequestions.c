@@ -1334,3 +1334,29 @@
     
 //     return 0;
 // }
+
+
+// Ques. Create a 2D array, storing the tables of 2 and 3
+// #include <stdio.h>
+// int main() {
+//     int table[2][10];
+//     int i, j;
+//     for (i = 0; i < 2; i++) {
+//         for (j = 0; j < 10; j++) {
+//             if (i == 0) {
+//                 table[i][j] = 2 * (j + 1);
+//             } else {
+//                 table[i][j] = 3 * (j + 1);
+//             }
+//         }
+//     }
+//     printf("Table of 2:\n");
+//     for (i = 0; i < 10; i++) {
+//         printf("2 x %d = %d\n", i + 1, table[0][i]);
+//     }
+//     printf("\nTable of 3:\n");
+//     for (i = 0; i < 10; i++) {
+//         printf("3 x %d = %d\n", i + 1, table[1][i]);
+//     }
+//     return 0;
+// }
