@@ -1265,20 +1265,48 @@
 // int arr[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
 
 // Ques. Write a function to count the number of odd numbers in an array
-#include <stdio.h>
-int countOddNumbers(int arr[], int size) {
-    int count = 0;
-    for (int i = 0; i < size; i++) {
-        if (arr[i] % 2 != 0) {
-            count++;
-        }
-    }
-    return count;
-}
-int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int oddCount = countOddNumbers(arr, size);
-    printf("Number of odd numbers: %d\n", oddCount);
-    return 0;
-}
+// #include <stdio.h>
+// int countOddNumbers(int arr[], int size) {
+//     int count = 0;
+//     for (int i = 0; i < size; i++) {
+//         if (arr[i] % 2 != 0) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// int main() {
+//     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+//     int oddCount = countOddNumbers(arr, size);
+//     printf("Number of odd numbers: %d\n", oddCount);
+//     return 0;
+// }
+
+
+// Ques. Write a function to reverse an array
+// #include <stdio.h>
+// void reverseArray(int arr[], int size) {
+//     int start = 0;
+//     int end = size - 1;
+//     while (start < end) {
+//         int temp = arr[start];
+//         arr[start] = arr[end];
+//         arr[end] = temp;
+//         start++;
+//         end--;
+//     }
+// }
+// int main() {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+    
+//     reverseArray(arr, size);
+    
+//     printf("Reversed array:\n");
+//     for (int i = 0; i < size; i++) {
+//         printf("%d ", arr[i]);
+//     }
+    
+//     return 0;
+// }
