@@ -1632,3 +1632,56 @@
     
 //     return 0;
 // }
+
+
+
+
+
+
+
+
+
+
+// STRUCTURES
+// a collection of values of different data types
+// Syntax : struct structure_name {
+//     data_type member1;
+//     data_type member2;
+//     data_type member3;
+// };
+
+// eg : struct student {
+// char name[100];
+// int roll;
+// float cgpa;
+// };
+// struct student s1;
+// s1.cgpa = 7.5;
+
+// Two types of data types :
+// 1. inbuilt data types - int, char, float, double
+// 2. user defined data types - struct, union, enum
+
+
+// #include <stdio.h>
+// int main() {
+//     struct student {
+//         char name[100];
+//         int roll;
+//         float cgpa;
+//     };
+//     struct student s1;
+//     printf("Enter name: ");
+//     fgets(s1.name, sizeof(s1.name), stdin);
+//     s1.name[strcspn(s1.name, "\n")] = '\0'; // Remove newline character
+//     printf("Enter roll number: ");
+//     scanf("%d", &s1.roll);
+//     printf("Enter CGPA: ");
+//     scanf("%f", &s1.cgpa);
+    
+//     printf("Name: %s\n", s1.name);
+//     printf("Roll Number: %d\n", s1.roll);
+//     printf("CGPA: %.2f\n", s1.cgpa);
+    
+//     return 0;
+// }
