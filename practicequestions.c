@@ -1747,3 +1747,23 @@
 //     printf("student roll = %d\n",s1.roll);
 //     return 0;
 // }
+
+
+
+// Pointers to Structures
+// struct student s1;
+// struct student *ptr;
+// ptr = &s1;
+
+// #include <stdio.h>
+// struct student {
+//     int roll;
+//     float cgpa;
+//     char name[100];
+// };
+// int main() {
+//     struct student s1 = {1664, 8.9, "raj"};
+//     struct student *ptr = &s1;
+//     printf("student roll = %d\n",(*ptr).roll);
+//     return 0;
+// }
