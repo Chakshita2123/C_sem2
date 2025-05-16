@@ -1554,3 +1554,81 @@
 //     }
 //     return 0;
 // }
+
+
+// Ques. Find the salted form of a password entered by user if the salt is "123" & added at the end
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char password[100], salted_password[100];
+//     char salt[] = "123";
+//     printf("Enter your password: ");
+//     fgets(password, sizeof(password), stdin);
+//     // Concatenate the salt to the password
+//     strcpy(salted_password, password);
+//     strcat(salted_password, salt);
+//     printf("Salted password: %s\n", salted_password);
+//     return 0;
+// }
+
+
+// Ques. Write a function named slice, which takes a string & returns a sliced string from index n to m
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char s[] = "Hello, How are you!";
+//     char *slice(char *s, int n, int m) {
+//         return &s[n];
+//         }
+//     char *slice = slice(s, 7, 12);
+//     printf("Sliced string: %s\n", slice);
+//     return 0;
+// }
+
+
+// Ques. write a function to count the occurence of vowels in a string
+// #include <stdio.h>
+// #include <string.h>
+// int countVowels(char *str) {
+//     int count = 0;
+//     char *vowels = "aeiouAEIOU";
+//     while (*str != '\0') {
+//         if (strchr(vowels, *str) != NULL) {
+//             count++;
+//         }
+//         str++;
+//     }
+//     return count;
+// }
+// int main() {
+//     char str[100];
+//     printf("Enter a string: ");
+//     fgets(str, sizeof(str), stdin);
+//     str[strcspn(str, "\n")] = '\0'; // Remove newline character
+//     int vowelCount = countVowels(str);
+//     printf("Number of vowels: %d\n", vowelCount);
+//     return 0;
+// }
+
+
+
+// Ques. Check if a given character is present in a string or not
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     char str[100];
+//     char ch;
+//     printf("Enter a string: ");
+//     fgets(str, sizeof(str), stdin);
+//     str[strcspn(str, "\n")] = '\0'; // Remove newline character
+//     printf("Enter a character to search: ");
+//     scanf("%c", &ch);
+    
+//     if (strchr(str, ch) != NULL) {
+//         printf("Character '%c' is present in the string.\n", ch);
+//     } else {
+//         printf("Character '%c' is not present in the string.\n", ch);
+//     }
+    
+//     return 0;
+// }
