@@ -1685,3 +1685,65 @@
     
 //     return 0;
 // }
+
+
+// Structures in Memory : structures are stored in contiguous memory location
+
+
+// Ques. Write a program to store the details of 3 students using structure
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     struct student {
+//         char name[100];
+//         int roll;
+//         float cgpa;
+//     };
+//     struct student s[3];
+//     int i;
+//     for (i = 0; i < 3; i++) {
+//         printf("Enter name of student %d: ", i + 1);
+//         fgets(s[i].name, sizeof(s[i].name), stdin);
+//         s[i].name[strcspn(s[i].name, "\n")] = '\0'; // Remove newline character
+//         printf("Enter roll number of student %d: ", i + 1);
+//         scanf("%d", &s[i].roll);
+//         printf("Enter CGPA of student %d: ", i + 1);
+//         scanf("%f", &s[i].cgpa);
+//         getchar(); // Clear the newline character from the input buffer
+//     }
+//     printf("\nStudent Details:\n");
+//     for (i = 0; i < 3; i++) {
+//         printf("Name: %s\n", s[i].name);
+//         printf("Roll Number: %d\n", s[i].roll);
+//         printf("CGPA: %.2f\n", s[i].cgpa);
+//         printf("\n");
+//    }
+//     return 0;
+// }
+
+
+// Array of Structures
+// struct student ECE[100];
+// struct student CSE[100];
+// struct student ME[100];
+
+// IT[0].roll = 200;
+// IT[0].cgpa = 8.5;
+
+
+// Initializing Structures
+// struct student s1 = {"sharma",1664,8.5};
+// struct student s2 = {"raj",1665,8.6};
+// struct student s3 = {0};
+
+// #include <stdio.h>
+// struct student {
+//     int roll;
+//     float cgpa;
+//     char name[100];
+// };
+// int main() {
+//     struct student s1 = {1664,8.9,"raj"};
+//     printf("student roll = %d\n",s1.roll);
+//     return 0;
+// }
