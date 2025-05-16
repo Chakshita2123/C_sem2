@@ -1767,3 +1767,33 @@
 //     printf("student roll = %d\n",(*ptr).roll);
 //     return 0;
 // }
+
+
+// Ques . Enter address (house no.,block,cit,state) of 5 people
+// #include <stdio.h>
+// #include <string.h>
+// int main() {
+//     struct address {
+//         char houseNo[20];
+//         char block[20];
+//         char city[20];
+//         char state[20];
+//     };
+//     struct address people[5];
+//     int i;
+//     for (i = 0; i < 5; i++) {
+//         printf("Enter address of person %d:\n", i + 1);
+//         printf("House No: ");
+//         fgets(people[i].houseNo, sizeof(people[i].houseNo), stdin);
+//         people[i].houseNo[strcspn(people[i].houseNo, "\n")] = '\0'; // Remove newline character
+//         printf("Block: ");
+//         fgets(people[i].block, sizeof(people[i].block), stdin);
+//         people[i].block[strcspn(people[i].block, "\n")] = '\0'; // Remove newline character
+//         printf("City: ");
+//         fgets(people[i].city, sizeof(people[i].city), stdin);
+//         people[i].city[strcspn(people[i].city, "\n")] = '\0'; // Remove newline character
+//         printf("State: ");
+//         fgets(people[i].state, sizeof(people[i].state), stdin);
+//         people[i].state[strcspn(people[i].state, "\n")] = '\0'; // Remove newline character
+//     }
+// }
