@@ -1934,3 +1934,40 @@
 //     }
 //     return 0;
 // }
+
+
+// Ques. Create an array of size5 (using calloc) & enter its values from the user
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *ptr;
+//     ptr = (int*)calloc(5,sizeof(int));
+//     printf("Enter numbers(5): ");
+//     for(int i = 0;i<5;i++) {
+//         scanf("%d",&ptr[i]);
+//     }
+//     for(int i = 0;i<5;i++) {
+//         printf("%d ",ptr[i]);
+//     }
+//     return 0;
+// }
+
+
+
+// Ques. Allocate memory to store first 5 odd numbers, then reallocate it to store first 6 even numbers
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *ptr;
+//     ptr = (int*)calloc(5,sizeof(int));
+//     printf("First 5 odd numbers: ");
+//     for(int i = 1;i<= 10;i+=2) {
+//         printf("%d ",i);
+//     }
+//     ptr = realloc(ptr, 6*sizeof(int));
+//     printf("\nFirst 6 even numbers: ");
+//     for(int i = 2;i<= 12;i+=2) {
+//         printf("%d ",i);
+//     }
+//     return 0;
+// }
