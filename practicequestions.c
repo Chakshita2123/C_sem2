@@ -1971,3 +1971,42 @@
 //     }
 //     return 0;
 // }
+
+
+
+
+
+// Armstrong number
+// #include <stdio.h>
+// #include <math.h>
+// int isArmstrong(int num) {
+//     int originalnum = 0;
+//     int sum = 0;
+//     int digits = 0;
+//     while (originalnum!=0) {
+//         originalnum /= 10;
+//         digits++;
+//     }
+//     originalnum = num;
+//     while(originalnum != 0) {
+//         int digit = originalnum%10;
+//         sum += pow(digit,digits);
+//         originalnum /= 10;
+//     }
+//     if (sum == num) {
+//         return 1; // Armstrong number
+//     } else {
+//         return 0; // Not an Armstrong number
+//     }
+// }
+// int main() {
+//     int num;
+//     printf("Enter a number: ");
+//     scanf("%d", &num);
+//     if (isArmstrong(num)) {
+//         printf("%d is an Armstrong number.\n", num);
+//     } else {
+//         printf("%d is not an Armstrong number.\n", num);
+//     }
+//     return 0;
+// }
