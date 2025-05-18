@@ -1797,3 +1797,33 @@
 //         people[i].state[strcspn(people[i].state, "\n")] = '\0'; // Remove newline character
 //     }
 // }
+
+
+
+// Dynamic Memory Allocation
+// allocate memory to a data structure during runtime
+// malloc() - allocate memory
+// calloc() - allocate memory & initialize to 0
+// realloc() - reallocate memory
+// free() - free the allocated memory
+
+// 1. malloc() - takes no. of bytes to be allocated & return a pointer of type void
+// eg : ptr = (int*)malloc(5*sizeof(int)); // allocate memory for 5 integers
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *ptr;
+//     ptr = (int *)malloc(5*sizeof(int));
+
+//     ptr[0] = 1;
+//     ptr[1] = 3;
+//     ptr[2] = 5;
+//     ptr[3] = 7;
+//     ptr[4] = 9;
+
+//     for (int i = 0;i<5;i++) {
+//         printf("%d",ptr[i]);
+//     }
+//     return 0;
+// }
