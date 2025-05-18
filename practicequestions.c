@@ -1827,3 +1827,25 @@
 //     }
 //     return 0;
 // }
+
+
+// Ques. Write a program to allocate memory to store 5 prices
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     float *price;
+//     price = (float*)malloc(5*sizeof(float));
+//     if (price == NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+//     ptr[0] = 10.5;
+//     ptr[1] = 20.5;
+//     ptr[2] = 30.5;
+//     ptr[3] = 40.5;
+//     ptr[4] = 50.5;
+//     for (int i = 0; i < 5; i++) {
+//         printf("Price %d: %.2f\n",price[i]);
+//     }
+//     return 0;
+// }
