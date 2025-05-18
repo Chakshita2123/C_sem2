@@ -2091,11 +2091,10 @@
 //             printf("Element found at position: %d\n",i+1);
 //             break;
 //         }
-//         else {
-//             printf("Element not found.\n");
+//         if (!=found){
+//             printf("-1\n");
 //             break;
 //         }
-
 //     }
 //     return 0;
 // }
