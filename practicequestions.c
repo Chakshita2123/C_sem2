@@ -2041,3 +2041,61 @@
 //     }
 //     return 0;
 // }
+
+// prime number
+// #include <stdio.h>
+// int main(){
+//     int num;
+//     printf("Enter the number: ");
+//     scanf("%d",&num);
+//     if (num == 0 || num == 1) {
+//         printf("Not a prime nummber.\n");
+//     }
+//     else if (num == 2) {
+//         printf("Prime number.\n");
+//     }
+//     else {
+//         for (int i = 2;i<num;i++){
+//             if (num%i == 0) {
+//                 printf("Not a prime number.\n");
+//                 break;
+//             }
+//             else if (i == num-1) {
+//                 printf("Prime number.\n");
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+
+
+// Q11. Problem Statement 
+// Write a program in C to find an element in a 1-D array. Initially you have to input 5 elements in an array and the element you 
+// want to search. The program should print the position/ (index no +1) of the element in the array (for the first successful match 
+// only) otherwise it should print -1. 
+// NOTE: If the search element is found at 2 or more positions in the array then you have to print only the first matching position 
+// where the element is found. 
+// #include <stdio.h>
+// int main() {
+//     int arr[5],search, found = 0,i;
+//     printf("Enter 5 elements in the array: ");
+//     for (i=0;i<5;i++) {
+//         scanf("%d",&arr[i]);
+//     }
+//     printf("Enter the element to search: ");
+//     scanf("%d",&search);
+//     for (i=0;i<5;i++){
+//         if (arr[i] == search){
+//             found = 1;
+//             printf("Element found at position: %d\n",i+1);
+//             break;
+//         }
+//         else {
+//             printf("Element not found.\n");
+//             break;
+//         }
+
+//     }
+//     return 0;
+// }
