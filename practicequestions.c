@@ -1849,3 +1849,41 @@
 //     }
 //     return 0;
 // }
+
+
+
+// 2. calloc() - continuous allocation of memory | initializes with 0
+// eg : ptr = (int*)calloc(5,sizeof(int));
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *ptr;
+//     ptr = (int*)calloc(5,sizeof(int));
+//     if (ptr == NULL) {
+//         printf("Memory allocation failed\n");
+//         return 1;
+//     }
+
+//     for (int i = 0;i<3;i++) {
+//         printf("%d",ptr[i]);
+//     }
+//     return 0;
+// }
+  
+
+// Ques. WAP to allocate memory of size n, where n is entered by the user
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *ptr;
+//     int n;
+//     printf("ENter the size of array: ");
+//     scanf("%d",&n);
+//     ptr = (int*)calloc(n,sizeof(int));
+
+//     for (int i = 0;i<n;i++) {
+//         printf("%d",ptr[i]);
+//     }
+//     return 0;
+// }
