@@ -1887,3 +1887,24 @@
 //     }
 //     return 0;
 // }
+
+
+// 3. free() - use it to free the memory that is allocated using malloc nd calloc
+// syntax : free(ptr);
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *ptr;
+//     ptr = (int*)malloc(5*sizeof(int));
+//     for (int i = 0;i<5;i++) {
+//         printf("%d",ptr[i]);
+//     }
+//     free(ptr); // Free the allocated memory
+
+//     ptr = (int*)malloc(2*sizeof(int)); // Reallocate memory
+//     for (int i = 0;i<2;i++) {
+//         printf("%d",ptr[i]);
+//     }
+//     return 0;
+// }
