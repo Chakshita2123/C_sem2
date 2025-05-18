@@ -1908,3 +1908,29 @@
 //     }
 //     return 0;
 // }
+
+
+// 4. realloc() - used to reallocate (increase or decrease) memory using the same pointer & size
+// syntax : realloc(ptr, new_size);
+
+
+// Ques. ALlocate memory for 5 integers, then reallocate it to 8 numbers
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main() {
+//     int *ptr;
+//     ptr = (int *)calloc(5,sizeof(int));
+//     printf("Enter numbers(5): ");
+//     for (int i = 0;i<5;i++) {
+//         scanf("%d",&ptr[i]);
+//     }
+//     ptr = realloc(ptr, 8);
+//     printf("Enter numbers(8): ");
+//     for (int i = 0;i<8;i++) {
+//         scanf("%d",&ptr[i]);
+//     }
+//     for (int i = 0;i<8;i++) {
+//         printf("%d",ptr[i]);
+//     }
+//     return 0;
+// }
